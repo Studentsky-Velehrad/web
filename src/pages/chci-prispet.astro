@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Chci přispět - Studentský Velehrad 2026">
+    <style>
+        /* Footer styles */
+        #g-footer {
+            background-color: #09192a;
+            color: #fff;
+        }
+
+        #g-footer .footer-text,
+        #g-footer .footer-text p,
+        #g-footer .footer-text a {
+            color: #fff;
+        }
+
+        .content {
+            padding-top: 80px;
+        }
+
+        #about {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding-top: 70px;
+        }
+
+        .about-flex {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 2rem auto;
+            gap: 20px;
+            padding: 0 2rem;
+        }
+
+        .about-text {
+            color: #424753;
+            text-align: left;
+            max-width: 900px;
+            width: 100%;
+            z-index: 999;
+        }
+
+        #about h2 {
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            font-size: 18px;
+            color: #424753;
+            letter-spacing: 1px;
+        }
+
+        #about p {
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            line-height: 2;
+        }
+
+        #about a {
+            color: #eeaf13;
+            text-decoration: underline;
+        }
+
+        #about a:hover {
+            opacity: 0.8;
+        }
+
+        .about-text strong {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .thanks-message {
+            display: block;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding-top: 60px;
+            }
+
+            .about-flex {
+                padding: 0 1rem;
+            }
+
+            #about {
+                padding-top: 30px;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            #about p img {
+                max-width: 200px;
+                height: auto;
+            }
+        }
+    </style>
+
+    <Header />
+    
+    <div class="content">
+        <div class="nav-bar"></div>
+        <div class="cover-bar"></div>
+        
+        <section id="about">
+            <div class="about-flex">
+                <div class="about-text">
+                    <strong>QR kód pro zaslání sponzorského daru</strong>
+
+                    <p>Přispět na letošní ročník Studentského Velehradu můžete prostřednictvím QR kódu. Otázky
+                        ke sponzorským darům zodpoví Karel Bláha: <a href="mailto:finance@vkhcr.org">finance@vkhcr.org</a>
+                    </p>
+                    <p>
+                        <img src="/images/qr_kod.webp" width="250" height="250" alt="QR kód pro dar">
+                    </p>
+                    
+                    <strong>Bankovní spojení pro zaslání sponzorského daru</strong>
+                    <p>
+                        Číslo účtu: <em>239185959 / 2010</em>.
+                        Specifický symbol: <em>mobil na kontaktní osobu</em> (nepovinný údaj).
+                        Zpráva pro příjemce: <em>jméno dárce</em>
+                    </p>
+
+                    <p class="thanks-message"><strong>Děkujeme za Vaši podporu!</strong></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <Footer />
+    
+    <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
+    <div class="bottom-bar"></div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const hamburgerClose = document.querySelector('.hamburger-close');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            hamburger?.classList.toggle("open");
+            mobileMenu?.classList.toggle('open');
+            mobileOverlay?.classList.toggle('open');
+        }
+
+        hamburgerClose?.addEventListener('click', () => {
+            toggleMenu();
+        });
+
+        hamburger?.addEventListener('click', (e) => {
+            toggleMenu();
+            e.stopPropagation();
+        });
+
+        mobileMenu?.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        mobileOverlay?.addEventListener('click', () => {
+            if (mobileMenu?.classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (mobileMenu?.classList.contains('open') && 
+                !mobileMenu.contains(e.target) && 
+                !hamburger?.contains(e.target)) {
+                hamburger?.classList.remove('open');
+                mobileMenu?.classList.remove('open');
+                mobileOverlay?.classList.remove('open');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (mobileMenu?.classList.contains('open')) {
+                hamburger?.classList.remove('open');
+                mobileMenu?.classList.remove('open');
+                mobileOverlay?.classList.remove('open');
+            }
+        });
+
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu?.classList.remove('open');
+                hamburger?.classList.remove('open');
+                mobileOverlay?.classList.remove('open');
+            });
+        });
+
+        const btn = document.getElementById("scrollTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                btn.classList.add("show");
+            } else {
+                btn.classList.remove("show");
+            }
+        });
+
+        btn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            window.addEventListener('scroll', function () {
+                const navBar = document.querySelector('.nav-bar');
+                if (window.innerHeight / 2.5 < window.scrollY) {
+                    navBar.style.display = 'none';
+                } else {
+                    navBar.style.display = 'flex';
+                    navBar.style.backgroundColor = '#e4cea1';
+                }
+
+                const bottomBar = document.querySelector('.bottom-bar');
+                const docHeight = document.documentElement.scrollHeight;
+
+                if (window.scrollY > 0 && window.scrollY + window.innerHeight >= docHeight - 300 && window.scrollY > 50) {
+                    bottomBar.style.display = 'flex';
+                } else {
+                    bottomBar.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</Layout>
