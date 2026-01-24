@@ -1,1 +1,160 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Ohrada';
+    src: url('/fonts/Ohrada.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Now';
+    src: url('/fonts/HelveticaNow.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Now Bold';
+    src: url('/fonts/HelveticaNowBold.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    background-color: #f4f5f7;
+    margin: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #424753;
+}
+
+.single-line {
+    white-space: nowrap;
+}
+
+p {
+    line-height: 1.2;
+    margin: 0;
+}
+
+a {
+    color: #eeaf13;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cfa00f;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.content {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Scroll to top button */
+#scrollTopBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    background-image: url("/images/arrow-up-circle.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    z-index: 9999;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    mix-blend-mode: multiply;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#scrollTopBtn img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Mobile bars */
+@media (max-width: 768px) {
+    .nav-bar {
+        display: flex;
+        top: 0px;
+        background: #e4cea1;
+        color: white;
+        position: fixed;
+        width: 100%;
+        height: 30svh;
+        z-index: 0;
+    }
+
+    .cover-bar {
+        top: 0px;
+        bottom: 0;
+        background: #f4f5f7;
+        color: white;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+    }
+
+    .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        background: #031a2b;
+        color: white;
+        width: 100%;
+        height: 30svh;
+        z-index: 0;
+    }
+}

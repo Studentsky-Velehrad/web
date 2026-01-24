@@ -8,5 +8,6 @@ export default defineConfig({
   site: 'https://studentskyvelehrad.cz',
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  integrations: [],
 });
