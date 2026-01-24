@@ -35,7 +35,7 @@
 
 'assets: fonts':
   - changed-files:
-    - any-glob-to-any-file: 'public/fonts/**'
+    - any-glob-to-any-file: 'public/src/fonts/**'
 
 # Styles
 'styles':
