@@ -3,82 +3,62 @@
 
 <style>
     #g-footer {
-        background-color: #09192a;
-        color: #fff;
-        padding: 3rem 0;
-        margin-top: 0;
+        width: 100%;
+        background-color: #031a2b;
+        color: white;
+        padding: 3.5rem 0;
+        z-index: 10;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
-    #g-footer .container {
+    .footer-flex {
+        display: flex;
+        justify-content: space-between;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 2rem;
     }
 
-    #g-footer .footer-flex {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 3rem;
-        align-items: center;
+    .footer-text,
+    .footer-logo {
+        width: 560px;
+        padding: 16px 0 16px 15px;
     }
 
-    #g-footer .footer-text,
-    #g-footer .footer-text p,
-    #g-footer .footer-text a {
-        color: #fff;
+    .footer-text p {
+        line-height: 2;
+        margin: 16px 0;
+    }
+
+    .footer-text {
+        text-align: left;
         font-family: 'Open Sans', Arial, sans-serif;
     }
 
-    #g-footer .footer-text p {
-        margin: 0 0 1.5rem 0;
-        line-height: 1.8;
-        font-size: 0.95rem;
-    }
-
-    #g-footer .footer-text p:last-child {
-        margin-bottom: 0;
-    }
-
-    #g-footer .footer-text a {
-        text-decoration: underline;
-    }
-
-    #g-footer .footer-text a:hover {
-        opacity: 0.8;
-    }
-
-    #g-footer .footer-logo {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    #g-footer .footer-logo img {
-        max-width: 300px;
-        width: 100%;
-        height: auto;
+    .footer-logo img {
+        height: 50px;
     }
 
     @media (max-width: 768px) {
-        #g-footer {
-            padding: 2rem 1rem;
+        .footer-flex {
+            flex-direction: column;
+            align-items: center;
         }
 
-        #g-footer .footer-flex {
-            grid-template-columns: 1fr;
-            gap: 2rem;
+        .footer-text,
+        .footer-logo {
+            width: auto;
+            padding: 1rem;
         }
 
-        #g-footer .footer-logo {
-            justify-content: center;
-        }
-
-        #g-footer .footer-logo img {
-            max-width: 200px;
-        }
-
-        #g-footer .footer-text {
+        .footer-logo {
             text-align: center;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
         }
     }
 </style>
