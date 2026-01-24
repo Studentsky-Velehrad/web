@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studentský Velehrad 2026</title>
+    <link
+      rel="preload"
+      href="/fonts/Ohrada.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNow.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNowBold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/OpenSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/OpenSans-Italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/OpenSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" as="image" href="/images/logo_b_transparent.webp" />
+    <link rel="preload" as="image" href="/images/qr_kod.webp" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/mobileMenu.css" />
+
+    <style>
+      #about {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        padding-top: 70px;
+      }
+
+      .about-flex {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 2rem auto;
+        gap: 20px;
+        padding: 0 20px;
+      }
+
+      .about-text {
+        color: #424753;
+        text-align: left;
+        max-width: 900px;
+        width: 100%;
+        z-index: 999;
+      }
+
+      #about h2 {
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+        font-size: 18px;
+        color: #424753;
+        letter-spacing: 1px;
+      }
+
+      #about p {
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+        line-height: 2;
+      }
+
+      .about-text strong {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .thanks-message {
+        display: block;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="g-navigation">
+      <div class="header-container">
+        <div class="logo logo-bottom">
+          <a href="/" class="logo-text">Studentský Velehrad</a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/tym">Tým</a></li>
+            <!-- <li><a href="/q&a">Q&A</a></li>
+                    <li><a href="/registrace">Registrace</a></li> -->
+            <li>
+              <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
+                >Minulý ročník</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="logo">
+      <a href="/" class="logo-text">Studentský Velehrad</a>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="hamburger-close" id="hamburger-close">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul>
+        <li><a href="/tym">Tým</a></li>
+        <!-- <li><a href="/q&a">Q&A</a></li>
+            <li><a href="/registrace">Registrace</a></li> -->
+        <li>
+          <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
+            >Minulý ročník</a
+          >
+        </li>
+      </ul>
+    </div>
+    <button class="hamburger" aria-label="Otevřít menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="content">
+      <div class="nav-bar"></div>
+      <div class="cover-bar"></div>
+      <!-- <main> -->
+      <section id="about">
+        <div class="about-flex">
+          <div class="about-text">
+            <strong>QR kód pro zaslání sponzorského daru</strong>
+
+            <p>
+              Přispět na letošní ročník Studentského Velehradu můžete
+              prostřednictvím QR kódu. Otázky ke sponzorským darům zodpoví Karel
+              Bláha: <a href="mailto:finance@vkhcr.org">finance@vkhcr.org</a>
+            </p>
+            <p>
+              <img
+                src="/images/qr_kod.webp"
+                width="250"
+                height="250"
+                alt="QR kód pro dar"
+              />
+            </p>
+            <strong>Bankovní spojení pro zaslání sponzorského daru</strong>
+            <p>
+              Číslo účtu: <em>239185959 / 2010</em>. Specifický symbol: <em
+                >mobil na kontaktní osobu</em
+              > (nepovinný údaj). Zpráva pro příjemce: <em>jméno dárce</em>
+            </p>
+
+            <p class="thanks-message">
+              <strong>Děkujeme za Vaši podporu!</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- </main> -->
+
+        <div id="g-footer">
+          <div class="container footer-flex">
+            <div class="footer-text">
+              <p>
+                Vysokoškolské katolické hnutí Česká republika, z.s.<br />
+                Kozí 8<br />
+                Brno, 602 00<br />
+                IČO: 26610311<br />
+                L 9486 vedená u Krajského soudu v Brně<br />
+                <strong>Č. účtu: </strong>2902653384/2010
+              </p>
+              <p>© 2024-2026 Studentský Velehrad. Všechna práva vyhrazena</p>
+            </div>
+
+            <div class="footer-logo">
+              <img src="/images/logo_b_transparent.webp" alt="Logo SV26" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
+    <div class="bottom-bar"></div>
+
+    <script type="module" src="/script.js" defer></script>
+  </body>
+</html>
