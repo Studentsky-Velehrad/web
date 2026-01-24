@@ -426,8 +426,9 @@ p {
     display: flex;
     height: var(--header-height);
     background-color: var(--color-secondary);
-    align-items: flex-end;
-    padding: 20px 25px 0px 20px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
     z-index: var(--z-logo);
     position: absolute;
     width: 100%;
@@ -438,7 +439,7 @@ p {
 
   .logo.shrink {
     height: 35px;
-    padding: 20px 15px 0px 15px;
+    padding: 0 15px;
   }
 
   .logo-text {
@@ -448,14 +449,14 @@ p {
     font-size: 2.5rem;
     margin-left: 10px;
     margin-right: 0;
-    margin-top: 5px;
-    transform: translateY(2px);
+    margin-top: 0;
+    transform: translateY(0);
     transition: font-size 0.3s ease, transform 0.3s ease, margin 0.3s ease;
   }
 
   .logo.shrink .logo-text {
     font-size: 1.8rem;
-    transform: translateY(0px);
+    transform: translateY(0);
     margin-left: 10px;
   }
 
@@ -532,6 +533,7 @@ p {
     max-width: none;
     background-color: rgba(26, 39, 100, 0.95); /* Slightly more opaque for better readability */
     flex-direction: column;
+    align-items: center;
     transition: transform var(--transition-base);
     z-index: var(--z-mobile-menu);
     padding-top: 60px;
@@ -547,9 +549,17 @@ p {
 
   .mobile-menu ul {
     list-style: none;
-    padding: 0 var(--spacing-lg); /* Add horizontal padding */
+    padding: 0;
     margin: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-menu ul li {
+    width: 100%;
+    text-align: center;
   }
 
   .mobile-menu ul li a {
