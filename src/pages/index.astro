@@ -7,58 +7,58 @@
     <!-- preload pozadí -->
     <link
       rel="preload"
-      href="fonts/Ohrada.otf"
+      href="/fonts/Ohrada.otf"
       as="font"
       type="font/otf"
-      crossorigin
+      crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="fonts/HelveticaNow.otf"
+      href="/fonts/HelveticaNow.otf"
       as="font"
       type="font/otf"
-      crossorigin
+      crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="fonts/HelveticaNowBold.otf"
+      href="/fonts/HelveticaNowBold.otf"
       as="font"
       type="font/otf"
-      crossorigin
+      crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="fonts/OpenSans-Regular.woff2"
+      href="/fonts/OpenSans-Regular.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
+      crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="fonts/OpenSans-Italic.woff2"
+      href="/fonts/OpenSans-Italic.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
+      crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="fonts/OpenSans-Bold.woff2"
+      href="/fonts/OpenSans-Bold.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
+      crossorigin="anonymous"
     />
-    <link rel="preload" as="image" href="images/cover.webp" />
-    <link rel="preload" as="image" href="images/SV26_FB.svg" />
-    <link rel="preload" as="image" href="images/SV26_IG.svg" />
-    <link rel="preload" as="image" href="images/SV26_YT.svg" />
-    <link rel="preload" as="image" href="images/arrow-up-circle.svg" />
-    <link rel="preload" as="image" href="images/logo_b_transparent.webp" />
-    <link rel="preload" as="image" href="images/dlazdice/prednasky.webp" />
-    <link rel="preload" as="image" href="images/dlazdice/workshopy.webp" />
-    <link rel="preload" as="image" href="images/dlazdice/liturgie.webp" />
-    <link rel="preload" as="image" href="images/dlazdice/skupinky.webp" />
-    <link rel="preload" as="image" href="images/dlazdice/zabava.webp" />
-    <link rel="preload" as="image" href="images/dlazdice/koncerty.webp" />
+    <link rel="preload" as="image" href="/images/cover.webp" />
+    <link rel="preload" as="image" href="/images/SV26_FB.svg" />
+    <link rel="preload" as="image" href="/images/SV26_IG.svg" />
+    <link rel="preload" as="image" href="/images/SV26_YT.svg" />
+    <link rel="preload" as="image" href="/images/arrow-up-circle.svg" />
+    <link rel="preload" as="image" href="/images/logo_b_transparent.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/prednasky.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/workshopy.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/liturgie.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/skupinky.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/zabava.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/koncerty.webp" />
     <link rel="stylesheet" href="global.css" />
 
     <style>
@@ -98,7 +98,7 @@
       .cover-text h1 {
         font-family: "Ohrada";
         font-weight: normal;
-        font-size: 7rem;
+        font-size: 8rem;
         color: #1a2764;
         margin-bottom: 1.8rem;
       }
@@ -106,15 +106,20 @@
       .subtitle {
         font-family: "Helvetica Now Bold", Arial, sans-serif;
         color: #1a2764;
-        font-size: 1.6rem;
+        font-size: 1.7rem;
+        font-weight: bold;
         margin-bottom: 1.3rem;
         line-height: 1.2;
+        max-width: 100%;
+        text-align: center;
+        white-space: nowrap;
       }
 
       .date {
         font-family: "Helvetica Now Bold", Arial, sans-serif;
         color: #1a2764;
-        font-size: 1.6rem;
+        font-size: 1.7rem;
+        font-weight: bold;
         margin-bottom: 2rem;
       }
 
@@ -311,6 +316,8 @@
 
         .subtitle {
           margin: 16px 0px 4.8px;
+          white-space: normal;
+          padding: 0 10px;
         }
 
         .date {
@@ -372,7 +379,7 @@
             <!-- <li><a href="/q&a">Q&A</a></li>  
                     <li><a href="/registrace">Registrace</a></li> -->
             <li>
-              <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
+              <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank" rel="noopener noreferrer"
                 >Minulý ročník</a
               >
             </li>
@@ -396,7 +403,7 @@
         <!-- <li><a href="/q&a">Q&A</a></li> 
             <li><a href="/registrace">Registrace</a></li> -->
         <li>
-          <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
+          <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank" rel="noopener noreferrer"
             >Minulý ročník</a
           >
         </li>
@@ -422,8 +429,13 @@
             <p class="date">30. dubna – 3. května 2026</p>
           </div>
           <div class="button-wrapper">
-            <a class="uvod-button">Zaregistruj se</a>
-            <!-- href="/registrace" -->
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd62ewZGBHMOiLG_T_zFeFN2-SfuhkuZ2nNMshAG4Oh_rEVRA/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="uvod-button"
+              >Zaregistruj se</a
+            >
             <a href="/chci-prispet" class="uvod-button prispet">Chci přispět</a>
           </div>
         </div>
@@ -557,10 +569,10 @@
           <div class="about-text">
             <h2>Kdo za tím stojí</h2>
             <p>
-              Akci pořádá <a href="https://vkhcr.cz" target="_blank"
-                >Vysokoškolské katolické hnutí ČR</a
+              Akci pořádá <a href="https://vkhcr.cz" target="_blank" rel="noopener noreferrer"
+                >Vysokoškolské katolické hnutí ČR</a
               >
-              ve spolupráci s jednotlivými místními organizacemi.
+              ve spolupráci s jednotlivými místními organizacemi.
             </p>
           </div>
         </div>
