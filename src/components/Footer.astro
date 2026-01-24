@@ -1,0 +1,104 @@
+---
+---
+
+<style>
+    #g-footer {
+        background-color: #09192a;
+        color: #fff;
+        padding: 3rem 0;
+        margin-top: 0;
+    }
+
+    #g-footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    #g-footer .footer-flex {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    #g-footer .footer-text,
+    #g-footer .footer-text p,
+    #g-footer .footer-text a {
+        color: #fff;
+        font-family: 'Open Sans', Arial, sans-serif;
+    }
+
+    #g-footer .footer-text p {
+        margin: 0 0 1.5rem 0;
+        line-height: 1.8;
+        font-size: 0.95rem;
+    }
+
+    #g-footer .footer-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    #g-footer .footer-text a {
+        text-decoration: underline;
+    }
+
+    #g-footer .footer-text a:hover {
+        opacity: 0.8;
+    }
+
+    #g-footer .footer-logo {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #g-footer .footer-logo img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        #g-footer {
+            padding: 2rem 1rem;
+        }
+
+        #g-footer .footer-flex {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        #g-footer .footer-logo {
+            justify-content: center;
+        }
+
+        #g-footer .footer-logo img {
+            max-width: 200px;
+        }
+
+        #g-footer .footer-text {
+            text-align: center;
+        }
+    }
+</style>
+
+<footer id="g-footer">
+    <div class="container footer-flex">
+        <div class="footer-text">
+            <p>
+                Vysokoškolské katolické hnutí Česká republika, z.s.<br>
+                Kozí 8<br>
+                Brno, 602 00<br>
+                IČO: 26610311<br>
+                L 9486 vedená u Krajského soudu v Brně<br>
+                <strong>Č. účtu: </strong>2902653384/2010
+            </p>
+            <p>© 2024-2026 Studentský Velehrad. Všechna práva vyhrazena</p>
+        </div>
+
+        <div class="footer-logo">
+            <img src="/images/logo_b_transparent.webp" alt="Logo SV26">
+        </div>
+    </div>
+</footer>
