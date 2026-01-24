@@ -35,10 +35,6 @@
         transform: translateY(2px);
     }
 
-    .logo-text:active {
-        color: black;
-    }
-
     .logo-text,
     .logo-text:link,
     .logo-text:visited,
