@@ -1,9 +1,37 @@
+---
+import Navigation from '../../components/Navigation.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+import Footer from '../../components/Footer.astro';
+---
+
 <!doctype html>
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studentský Velehrad 2026</title>
+    <title>Registrace - Studentský Velehrad 2026</title>
+    <meta name="description" content="Zaregistrujte se na Studentský Velehrad 2026. Celostátní setkání věřících vysokoškoláků a mladých pracujících." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://studentskyvelehrad.cz/registrace" />
+    <meta property="og:title" content="Registrace - Studentský Velehrad 2026" />
+    <meta property="og:description" content="Zaregistrujte se na Studentský Velehrad 2026. Celostátní setkání věřících vysokoškoláků a mladých pracujících." />
+    <meta property="og:image" content="https://studentskyvelehrad.cz/images/cover.webp" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://studentskyvelehrad.cz/registrace" />
+    <meta property="twitter:title" content="Registrace - Studentský Velehrad 2026" />
+    <meta property="twitter:description" content="Zaregistrujte se na Studentský Velehrad 2026. Celostátní setkání věřících vysokoškoláků a mladých pracujících." />
+    <meta property="twitter:image" content="https://studentskyvelehrad.cz/images/cover.webp" />
+    
     <link
       rel="preload"
       href="/fonts/Ohrada.otf"
@@ -113,6 +141,33 @@
         height: auto;
       }
 
+      .register-button {
+        font-family: Arial, sans-serif;
+        background-color: #e1543a;
+        color: #fff;
+        width: 15.5rem;
+        height: 58px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin: 2rem auto;
+      }
+
+      .register-button:hover {
+        background-color: hsl(8, 61%, 47%);
+        color: #fff;
+      }
+
+      .button-center {
+        text-align: center;
+        margin: 3rem 0;
+      }
+
       /* Mobile / tablet 640px a méně */
       @media (max-width: 640px) {
         .about-text {
@@ -135,52 +190,8 @@
   </head>
 
   <body>
-    <header id="g-navigation">
-      <div class="header-container">
-        <div class="logo">
-          <a href="/" class="logo-text">Studentský Velehrad</a>
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="/tym">Tým</a></li>
-            <!-- <li><a href="/q&a">Q&A</a></li>
-                    <li><a href="/registrace">Registrace</a></li> -->
-            <li>
-              <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
-                >Minulý ročník</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="logo">
-      <a href="/" class="logo-text">Studentský Velehrad</a>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <button class="hamburger-close" id="hamburger-close">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul>
-        <li><a href="/tym">Tým</a></li>
-        <!-- <li><a href="/q&a">Q&A</a></li>
-            <li><a href="/registrace">Registrace</a></li> -->
-        <li>
-          <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
-            >Minulý ročník</a
-          >
-        </li>
-      </ul>
-    </div>
-
-    <button class="hamburger" aria-label="Otevřít menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <Navigation />
+    <MobileMenu />
 
     <div class="content">
       <div class="nav-bar"></div>
@@ -198,8 +209,8 @@
             </p>
             <p>
               Pro více informací se podívej na <a
-                href="https://studentskyvelehrad.cz/images/Podminky_registrace_SV24_revize_zverejneni_09.04.2024.pdf"
-                target="_blank">všeobecné podmínky</a
+                href="https://studentskyvelehrad.cz/registrace"
+                target="_blank" rel="noopener noreferrer">všeobecné podmínky</a
               >.
             </p>
           </div>
@@ -237,6 +248,10 @@
           </div>
         </div>
 
+        <div class="button-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd62ewZGBHMOiLG_T_zFeFN2-SfuhkuZ2nNMshAG4Oh_rEVRA/viewform" target="_blank" rel="noopener noreferrer" class="register-button">Zaregistruj se</a>
+        </div>
+
         <!-- <div class="about-flex">
                 <div class="about-text">
                     <h2>Přihlašování</h2>
@@ -251,25 +266,7 @@
 
         <div class="about-flex"></div>
 
-        <footer id="g-footer">
-          <div class="container footer-flex">
-            <div class="footer-text">
-              <p>
-                Vysokoškolské katolické hnutí Česká republika, z.s.<br />
-                Kozí 8<br />
-                Brno, 602 00<br />
-                IČO: 26610311<br />
-                L 9486 vedená u Krajského soudu v Brně<br />
-                <strong>Č. účtu: </strong>2902653384/2010
-              </p>
-              <p>© 2024-2026 Studentský Velehrad. Všechna práva vyhrazena</p>
-            </div>
-
-            <div class="footer-logo">
-              <img src="/images/logo_b_transparent.webp" alt="Logo SV26" />
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </section>
     </div>
     <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>

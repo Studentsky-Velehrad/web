@@ -124,4 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }, { passive: true });
         }
     }
+
+    // Tile click functionality for index page
+    const tiles = document.querySelectorAll(".tile");
+    
+    tiles.forEach((tile) => {
+        tile.addEventListener("click", () => {
+            if (tile.classList.contains("active")) {
+                tile.classList.remove("active");
+            } else {
+                tiles.forEach((t) => t.classList.remove("active"));
+                tile.classList.add("active");
+            }
+        });
+    });
 });

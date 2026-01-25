@@ -1,3 +1,8 @@
+---
+import Navigation from '../../components/Navigation.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+---
+
 <!doctype html>
 <html lang="cs">
   <head>
@@ -146,51 +151,8 @@
   </head>
 
   <body>
-    <header id="g-navigation">
-      <div class="header-container">
-        <div class="logo">
-          <a href="/" class="logo-text">Studentský Velehrad</a>
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="/tym">Tým</a></li>
-            <!-- <li><a href="/q&a">Q&A</a></li>
-                    <li><a href="/registrace">Registrace</a></li> -->
-            <li>
-              <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
-                >Minulý ročník</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="logo">
-      <a href="/" class="logo-text">Studentský Velehrad</a>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <button class="hamburger-close" id="hamburger-close">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul>
-        <li><a href="/tym">Tým</a></li>
-        <!-- <li><a href="/q&a">Q&A</a></li>
-            <li><a href="/registrace">Registrace</a></li> -->
-        <li>
-          <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank"
-            >Minulý ročník</a
-          >
-        </li>
-      </ul>
-    </div>
-    <button class="hamburger" aria-label="Otevřít menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <Navigation />
+    <MobileMenu />
 
     <div class="content">
       <div class="nav-bar"></div>

@@ -1,3 +1,9 @@
+---
+import Navigation from '../../components/Navigation.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+import Footer from '../../components/Footer.astro';
+---
+
 <!doctype html>
 <html lang="cs">
   <head>
@@ -212,53 +218,8 @@
   </head>
 
   <body>
-    <header id="g-navigation">
-      <div class="header-container">
-        <div class="logo">
-          <a href="/" class="logo-text">Studentský Velehrad</a>
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="/tym">Tým</a></li>
-            <!-- <li><a href="/q&a">Q&A</a></li>
-                    <li><a href="/registrace">Registrace</a></li> -->
-            <li>
-              <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank" rel="noopener noreferrer"
-                >Minulý ročník</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="logo">
-      <a href="/" class="logo-text">Studentský Velehrad</a>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <button class="hamburger-close" id="hamburger-close">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul>
-        <li><a href="/">Úvod</a></li>
-        <li><a href="/tym">Tým</a></li>
-        <!-- <li><a href="/q&a">Q&A</a></li>
-            <li><a href="/registrace">Registrace</a></li> -->
-        <li>
-          <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank" rel="noopener noreferrer"
-            >Minulý ročník</a
-          >
-        </li>
-      </ul>
-    </div>
-
-    <button class="hamburger" aria-label="Otevřít menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <Navigation />
+    <MobileMenu />
 
     <div class="content">
       <div class="nav-bar"></div>
@@ -352,15 +313,15 @@
             <div class="tile">
               <img src="/images/tym/michaelZ.webp" alt="Michael" />
               <h2>Michael Žůrek</h2>
-              <p>Koncerty</p>
-              <a href="mailto:koncerty.sv@vkhcr.org">koncerty.sv@vkhcr.org</a>
+              <p>Expo</p>
+              <a href="mailto:prednasky.sv@vkhcr.org">prednasky.sv@vkhcr.org</a>
             </div>
 
             <div class="tile">
               <img src="/images/tym/ales.webp" alt="Aleš" />
               <h2>Aleš Schier</h2>
               <p>Koncerty</p>
-              <a href="mailto:koncerty.sv@vkhcr.org">koncerty.sv@vkhcr.org</a>
+              <a href="mailto:prednasky.sv@vkhcr.org">prednasky.sv@vkhcr.org</a>
             </div>
 
             <div class="tile">
@@ -455,25 +416,7 @@
 
         <!-- </main> -->
 
-        <footer id="g-footer">
-          <div class="container footer-flex">
-            <div class="footer-text">
-              <p>
-                Vysokoškolské katolické hnutí Česká republika, z.s.<br />
-                Kozí 8<br />
-                Brno, 602 00<br />
-                IČO: 26610311<br />
-                L 9486 vedená u Krajského soudu v Brně<br />
-                <strong>Č. účtu: </strong>2902653384/2010
-              </p>
-              <p>© 2024-2026 Studentský Velehrad. Všechna práva vyhrazena</p>
-            </div>
-
-            <div class="footer-logo">
-              <img src="/images/logo_b_transparent.webp" alt="Logo SV26" />
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </section>
     </div>
     <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
