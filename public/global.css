@@ -383,7 +383,7 @@ p {
     background: var(--color-secondary);
     position: fixed;
     width: 100%;
-    height: 10svh;
+    height: 0svh;
     z-index: 0;
   }
 
@@ -392,7 +392,7 @@ p {
     background: var(--color-background);
     position: fixed;
     width: 100%;
-    height: 10svh;
+    height: 0svh;
     z-index: 1;
   }
 
@@ -412,13 +412,13 @@ p {
     bottom: 0;
     background: var(--color-footer-bg);
     width: 100%;
-    height: 10svh;
+    height: 0svh;
     z-index: 0;
     transition: height 0.3s ease;
   }
 
   .bottom-bar.shrink {
-    height: 10svh;
+    height: 0svh;
   }
 
   /* Mobile Logo */
