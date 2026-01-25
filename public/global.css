@@ -79,7 +79,7 @@
   --header-padding-mobile: 1rem;
 
   /* Navigation */
-  --nav-gap-desktop: 5rem;
+  --nav-gap-desktop: 2rem;
   --nav-font-size: 1.2rem;
   --nav-letter-spacing: 1.5px;
 
@@ -632,7 +632,7 @@ p {
   }
 
   #g-navigation nav ul {
-    gap: var(--spacing-xl);
+    gap: 1.5rem;
   }
 
   .logo-text {
@@ -656,7 +656,7 @@ p {
 
 @media (min-width: 1280px) {
   #g-navigation nav ul {
-    gap: 6rem;
+    gap: 2.5rem;
   }
 
   /* Footer large desktop optimization */

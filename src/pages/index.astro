@@ -1,3 +1,9 @@
+---
+import Navigation from '../components/Navigation.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Footer from '../components/Footer.astro';
+---
+
 <!doctype html>
 <html lang="cs">
   <head>
@@ -392,53 +398,8 @@
   </head>
 
   <body>
-    <header id="g-navigation">
-      <div class="header-container">
-        <div class="logo">
-          <a href="/" class="logo-text">Studentský Velehrad</a>
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="/tym">Tým</a></li>
-            <!-- <li><a href="/q&a">Q&A</a></li>  
-                    <li><a href="/registrace">Registrace</a></li> -->
-            <li>
-              <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank" rel="noopener noreferrer"
-                >Minulý ročník</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <button
-        class="hamburger-close"
-        id="hamburger-close"
-        aria-label="Zavřít menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul>
-        <li><a href="/">Úvod</a></li>
-        <li><a href="/tym">Tým</a></li>
-        <!-- <li><a href="/q&a">Q&A</a></li> 
-            <li><a href="/registrace">Registrace</a></li> -->
-        <li>
-          <a href="https://sv24.studentskyvelehrad.cz/sv24" target="_blank" rel="noopener noreferrer"
-            >Minulý ročník</a
-          >
-        </li>
-      </ul>
-    </div>
-    <button class="hamburger" aria-label="Otevřít menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <Navigation />
+    <MobileMenu />
 
     <!-- HLAVNÍ OBSAH STRÁNKY -->
     <div class="content">
@@ -454,7 +415,7 @@
             <p class="date">30. dubna – 3. května 2026</p>
           </div>
           <div class="button-wrapper">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd62ewZGBHMOiLG_T_zFeFN2-SfuhkuZ2nNMshAG4Oh_rEVRA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="uvod-button">Zaregistruj se</a>
+            <a href="/registrace" class="uvod-button">Zaregistruj se</a>
             <a href="/chci-prispet" class="uvod-button prispet">Chci přispět</a>
           </div>
         </div>
@@ -610,45 +571,12 @@
           </p>
         </div>
 
-        <div id="g-footer">
-          <div class="container footer-flex">
-            <div class="footer-text">
-              <p>
-                Vysokoškolské katolické hnutí Česká republika, z.s.<br />
-                Kozí 8<br />
-                Brno, 602 00<br />
-                IČO: 26610311<br />
-                L 9486 vedená u Krajského soudu v Brně<br />
-                <strong>Č. účtu: </strong>2902653384/2010
-              </p>
-              <p>© 2024-2026 Studentský Velehrad. Všechna práva vyhrazena</p>
-            </div>
-
-            <div class="footer-logo">
-              <img src="images/logo_b_transparent.webp" alt="Logo SV26" />
-            </div>
-          </div>
-        </div>
+        <Footer />
       </section>
     </div>
     <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
     <div class="bottom-bar"></div>
 
     <script type="module" src="/script.js" defer></script>
-
-    <script>
-      const tiles = document.querySelectorAll(".tile");
-
-      tiles.forEach((tile) => {
-        tile.addEventListener("click", () => {
-          if (tile.classList.contains("active")) {
-            tile.classList.remove("active");
-          } else {
-            tiles.forEach((t) => t.classList.remove("active"));
-            tile.classList.add("active");
-          }
-        });
-      });
-    </script>
   </body>
 </html>
