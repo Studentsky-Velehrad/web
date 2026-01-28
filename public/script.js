@@ -105,29 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Mobile header and footer shrink on scroll
-    if (window.innerWidth <= 768) {
-        const logo = document.querySelector('.logo');
-        const bottomBar = document.querySelector('.bottom-bar');
-
-        if (logo || bottomBar) {
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (scrollTop > 50) {
-                    logo?.classList.add('shrink');
-                    bottomBar?.classList.add('shrink');
-                } else {
-                    logo?.classList.remove('shrink');
-                    bottomBar?.classList.remove('shrink');
-                }
-            }, { passive: true });
-        }
-    }
 
     // Tile click functionality for index page
     const tiles = document.querySelectorAll(".tile");
-    
+
     tiles.forEach((tile) => {
         tile.addEventListener("click", () => {
             if (tile.classList.contains("active")) {
