@@ -212,6 +212,7 @@ p {
 
 .logo {
   display: flex;
+  position: absolute;
   align-items: center;
   z-index: var(--z-logo);
 }
@@ -641,7 +642,7 @@ p {
 
 @media (min-width: 1280px) {
   #g-navigation nav ul {
-    gap: 2.5rem;
+    gap: 5rem;
   }
 
   /* Footer large desktop optimization */
