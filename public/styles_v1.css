@@ -360,7 +360,7 @@ p {
    Mobile & Tablet Responsive Styles
    ========================================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 932px) {
 
   /* Hide desktop navigation */
   #g-navigation {
@@ -604,7 +604,7 @@ p {
    Tablet Optimizations (768px - 1024px)
    ========================================================================== */
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/* @media (min-width: 769px) and (max-width: 1024px) {
   #g-navigation {
     padding: 0 var(--spacing-lg) 0 0;
   }
@@ -618,7 +618,6 @@ p {
     margin-right: var(--spacing-md);
   }
 
-  /* Footer tablet optimization */
   #g-footer {
     padding: var(--spacing-2xl) var(--spacing-lg);
   }
@@ -626,7 +625,7 @@ p {
   .footer-flex {
     gap: var(--spacing-lg);
   }
-}
+} */
 
 /* ==========================================================================
    Large Desktop Optimizations (1280px+)
