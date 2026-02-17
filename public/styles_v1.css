@@ -131,6 +131,11 @@ body {
   line-height: 1.6;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 button {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -371,7 +376,9 @@ p {
     display: none;
   }
 
-  /* Mobile Background Bars */
+  /*nav-bar      obarvení notch lišty */
+  /*cover-bar    pokud uprostřed stránky dám reload, tak nedochází k probliknutí nav-bar, protože je před ním cover-bar */
+  /*bottom-bar   obarvení spodní lišty */
   .nav-bar {
     display: flex;
     top: 0;
