@@ -2,20 +2,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>Kazatel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      /* Odstraníme scrollbar těla stránky */
       html,
       body {
         margin: 0;
         padding: 0;
         height: 100%;
-        overflow: hidden; /* <--- tady skrýváme scrollbar těla */
+        overflow: hidden; /* skryje scrollbar těla */
       }
       iframe {
         width: 100%;
-        height: 100%;
+        height: 100vh; /* viewport height pro mobil */
         border: none;
-        display: block; /* odstraní případné mezery pod iframe */
+        display: block;
       }
     </style>
   </head>
