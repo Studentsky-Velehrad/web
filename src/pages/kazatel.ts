@@ -7,7 +7,7 @@ export const GET: APIRoute = async ({ request }) => {
   return new Response(response.body, {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": "inline",
+      "Content-Disposition": "inline; filename=kazatel.pdf",
     },
   });
 };
