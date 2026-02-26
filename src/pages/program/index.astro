@@ -1,0 +1,627 @@
+﻿---
+import Navigation from "../../components/Navigation.astro";
+import MobileMenu from "../../components/MobileMenu.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program</title>
+    <meta name="description" content="Program Studentského Velehradu 2026" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://studentskyvelehrad.cz/program" />
+    <meta property="og:title" content="Program" />
+    <meta property="og:description" content="Program Studentského Velehradu 2026" />
+    <meta
+      property="og:image"
+      content="https://studentskyvelehrad.cz/images/cover.webp"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://studentskyvelehrad.cz/program"
+    />
+    <meta property="twitter:title" content="Program" />
+    <meta property="twitter:description" content="Program Studentského Velehradu 2026" />
+    <meta
+      property="twitter:image"
+      content="https://studentskyvelehrad.cz/images/cover.webp"
+    />
+
+    <link
+      rel="preload"
+      href="/fonts/Ohrada.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNow.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HelveticaNowBold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/OpenSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/OpenSans-Italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/OpenSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" as="image" href="/images/cover.webp" />
+    <link rel="preload" as="image" href="/images/SV26_FB.svg" />
+    <link rel="preload" as="image" href="/images/SV26_IG.svg" />
+    <link rel="preload" as="image" href="/images/SV26_YT.svg" />
+    <link rel="preload" as="image" href="/images/arrow-up-circle.svg" />
+    <link rel="preload" as="image" href="/images/logo_b_transparent.webp" />
+    <link rel="preload" as="image" href="/images/tym/amalka.webp" />
+    <link rel="preload" as="image" href="/images/tym/matej.webp" />
+    <link rel="stylesheet" href="/styles_v1.css" />
+
+    <style>
+      .about {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        padding-top: 70px;
+      }
+
+      .about-flex {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 1200px;
+        margin: 2rem auto;
+        gap: 20px;
+        padding: 0 15px;
+      }
+
+      .about-text {
+        color: #424753;
+        text-align: center;
+        width: 100%;
+        z-index: 999;
+      }
+
+      .about h2 {
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+        font-size: 18px;
+      }
+
+      .about p {
+        margin-bottom: 1.5rem;
+        line-height: 2;
+      }
+
+      .about p.spacing {
+        letter-spacing: 1.4px;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .tab-button {
+        background-color: #fff;
+        border: 2px solid #eeaf13;
+        color: #eeaf13;
+        padding: 0.75rem 2rem;
+        cursor: pointer;
+        font-size: 16px;
+        letter-spacing: 1.2px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+      }
+
+      .tab-button:hover {
+        background-color: #eeaf13;
+        color: #fff;
+      }
+
+      .tab-button.active {
+        background-color: #eeaf13;
+        color: #fff;
+      }
+
+      .tab-content {
+        display: none;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .schedule-table th {
+        background-color: #1a2764;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+
+      .schedule-table td {
+        color: #424753;
+        line-height: 1.8;
+      }
+
+      .schedule-table td:first-child {
+        font-weight: bold;
+        white-space: nowrap;
+        width: 180px;
+      }
+
+      .schedule-table tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      /* Mobile / tablet 640px a méně */
+      @media (max-width: 640px) {
+        .about-text {
+          width: auto;
+        }
+
+        .about-flex {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .tabs {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .tab-button {
+          width: 100%;
+          padding: 0.75rem 1rem;
+        }
+
+        .schedule-table {
+          font-size: 14px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+          padding: 0.75rem 0.5rem;
+        }
+
+        .schedule-table td:first-child {
+          width: auto;
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <Navigation />
+    <MobileMenu />
+
+    <div class="content">
+      <div class="nav-bar"></div>
+      <div class="cover-bar"></div>
+      <section class="about">
+        <div class="about-flex">
+          <div class="about-text">
+            <h2 class="spacing">Program</h2>
+            
+            <div class="tabs">
+              <button class="tab-button active" data-tab="ctvrtek">Čtvrtek</button>
+              <button class="tab-button" data-tab="patek">Pátek</button>
+              <button class="tab-button" data-tab="sobota">Sobota</button>
+              <button class="tab-button" data-tab="nedele">Neděle</button>
+            </div>
+
+            <div id="ctvrtek" class="tab-content active">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Čas</th>
+                    <th>Událost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>16:00 – 21:00</td>
+                    <td>Registrace - recepce</td>
+                  </tr>
+                  <tr>
+                    <td>19:00 – 20:30</td>
+                    <td>Zahajovací mše svatá - bazilika (o. biskup Prokop Brož)</td>
+                  </tr>
+                  <tr>
+                    <td>20:30 – 21:30</td>
+                    <td>Setkání ve skupinkách a večeře</td>
+                  </tr>
+                  <tr>
+                    <td>21:30 – 22:00</td>
+                    <td>Modlitba s žehnáním skupinkám</td>
+                  </tr>
+                  <tr>
+                    <td>22:00 – 00:00</td>
+                    <td>Posezení u cimbálky - turistické centrum</td>
+                  </tr>
+                  <tr>
+                    <td>22:00 – 00:00</td>
+                    <td>Deskovky a chill-out - gymnázium</td>
+                  </tr>
+                  <tr>
+                    <td>Celý den</td>
+                    <td>Tichá adorace - malá kaple na gymnáziu</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="patek" class="tab-content">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Čas</th>
+                    <th>Událost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>7:15 - 7:30</td>
+                    <td>Ranní modlitba</td>
+                  </tr>
+                  <tr>
+                    <td>7:30 - 9:30</td>
+                    <td>Snídaně a setkání ve skupinkách</td>
+                  </tr>
+                  <tr>
+                    <td>10:00 – 11:30</td>
+                    <td>
+                      <strong>Přednášky</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Štěpán Adam</li>
+                        <li>Dětská paliativní péče jako životní cesta (Jiří Krejčí)</li>
+                        <li>Panelová diskuze</li>
+                      </ul>
+                      <strong>Semináře</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Utrpení - Boží trest? (David Krajíček)</li>
+                        <li>Sůl země! Jako Fakt? (František Talíř)</li>
+                        <li>Antiochia</li>
+                      </ul>
+                      <strong>Workshopy</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Františkova ekonomika</li>
+                        <li>Kreativní workshop</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>12:00</td>
+                    <td>Modlitba u Velehradského kříže</td>
+                  </tr>
+                  <tr>
+                    <td>11:45 - 13:45</td>
+                    <td>Oběd a setkání ve skupinkách</td>
+                  </tr>
+                  <tr>
+                    <td>14:00 – 15:30</td>
+                    <td>
+                      <strong>Přednášky</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Manželé Jiroutovi</li>
+                        <li>Jana Matoušková</li>
+                        <li>Sestra</li>
+                        <li>Panelová diskuze</li>
+                      </ul>
+                      <strong>Semináře</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Arcibiskup Nuzík</li>
+                        <li>Štěpán Adam a Adéla Pafková</li>
+                        <li>Utrpení - Boží trest? (David Krajíček)</li>
+                      </ul>
+                      <strong>Workshopy</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Být nadějí pro svět (Františkova ekonomika)</li>
+                        <li>Paliativní péče a já (Petr Wiselka)</li>
+                        <li>Emoční inteligence (Daniel Tůma)</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>16:00 – 17:30</td>
+                    <td>Mše svatá - bazilika (o. arcibiskup Josef Nuzík)</td>
+                  </tr>
+                  <tr>
+                    <td>17:45 - 19:45</td>
+                    <td>Večeře a setkání ve skupinkách</td>
+                  </tr>
+                  <tr>
+                    <td>20:00 - 21:30</td>
+                    <td>Modlitební večer</td>
+                  </tr>
+                  <tr>
+                    <td>22:00 - 23:30</td>
+                    <td>(Pub)quiz - Turistické centrum</td>
+                  </tr>
+                  <tr>
+                    <td>22:00 - 23:30</td>
+                    <td>Audiodokumentární instalace - skrytá církev</td>
+                  </tr>
+                  <tr>
+                    <td>22:30 - 23:30</td>
+                    <td>Noční tour Velehradem</td>
+                  </tr>
+                  <tr>
+                    <td>23:30 - 00:30</td>
+                    <td>Pub</td>
+                  </tr>
+                  <tr>
+                    <td>Celý den</td>
+                    <td>Tichá adorace - malá kaple na gymnáziu</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="sobota" class="tab-content">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Čas</th>
+                    <th>Událost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>7:15 - 7:30</td>
+                    <td>Ranní modlitba</td>
+                  </tr>
+                  <tr>
+                    <td>7:30 - 9:30</td>
+                    <td>Snídaně a setkání ve skupinkách</td>
+                  </tr>
+                  <tr>
+                    <td>10:00 – 11:30</td>
+                    <td>
+                      <strong>Přednášky</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>"Něco krásného" v Parabibli (Alexandr Flek)</li>
+                        <li>Duchovní zneužívání (Marek Drábek)</li>
+                        <li>Je čas na mobilu být a je čas jej odložit (Pater Pepa)</li>
+                        <li>Čistota ve vztazích (Kika Štamberová)</li>
+                      </ul>
+                      <strong>Semináře</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Simeona Čupová</li>
+                        <li>Logos</li>
+                        <li>NePornu</li>
+                        <li>Digiděti v očích sítě (Jan Kršňák)</li>
+                      </ul>
+                      <strong>Workshopy</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Folklórní tanec (Jana Klečková)</li>
+                        <li>Workshop</li>
+                        <li>Kreativní workshop</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>12:00</td>
+                    <td>Modlitba u Velehradského kříže</td>
+                  </tr>
+                  <tr>
+                    <td>11:45 - 13:45</td>
+                    <td>Oběd a setkání ve skupinkách</td>
+                  </tr>
+                  <tr>
+                    <td>14:00 – 15:30</td>
+                    <td>
+                      <strong>Přednášky</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Je čas na reformu! Synodální obnova jako úkol pro křesťanství 3. tisíciletí (Tomáš Halík)</li>
+                        <li>Co bude po smrti? (Pater Pepa)</li>
+                        <li>Josef Prokeš</li>
+                        <li>Víra bez odpovědí (Václav Uher)</li>
+                      </ul>
+                      <strong>Semináře</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Simeona Čupová</li>
+                      </ul>
+                      <strong>Workshopy</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Taneční workshop (Majda Hejnešová a Míša Dilová)</li>
+                        <li>Jenda Regner</li>
+                        <li>Speed dating</li>
+                        <li>Kreativní workshop</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>16:00 – 17:30</td>
+                    <td>Mše svatá - bazilika (o. Miroslav Herold)</td>
+                  </tr>
+                  <tr>
+                    <td>17:45 - 19:45</td>
+                    <td>Večeře a setkání ve skupinkách</td>
+                  </tr>
+                  <tr>
+                    <td>20:00 - 20:45</td>
+                    <td>Večerní modlitba</td>
+                  </tr>
+                  <tr>
+                    <td>21:00 - 22:30</td>
+                    <td>Koncert - turistické centrum</td>
+                  </tr>
+                  <tr>
+                    <td>21:00 - 22:30</td>
+                    <td>Varhanní koncert</td>
+                  </tr>
+                  <tr>
+                    <td>22:30 - 00:00</td>
+                    <td>Cimbálka - džbánek</td>
+                  </tr>
+                  <tr>
+                    <td>0:00 - 1:30</td>
+                    <td>Afterparty</td>
+                  </tr>
+                  <tr>
+                    <td>Celý den</td>
+                    <td>Tichá adorace - malá kaple na gymnáziu</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="nedele" class="tab-content">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Čas</th>
+                    <th>Událost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>7:15 - 7:30</td>
+                    <td>Ranní modlitba</td>
+                  </tr>
+                  <tr>
+                    <td>7:30 - 9:30</td>
+                    <td>Snídaně a setkání ve skupinkách</td>
+                  </tr>
+                  <tr>
+                    <td>9:30 – 11:00</td>
+                    <td>
+                      <strong>Přednášky</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Kdo Ti pověděl, že jsi nahý? (Tomáš Čirž)</li>
+                        <li>Otmar Oliva (moderuje Václav Uher)</li>
+                        <li>Ekologie</li>
+                      </ul>
+                      <strong>Semináře</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Mons. Stanislav Přibyl</li>
+                        <li>Svatý outfit? (Matěj Tvarůžka)</li>
+                        <li>Je čas na reformu! Synodální obnova jako úkol pro křesťanství 3. tisíciletí (Tomáš Halík)</li>
+                      </ul>
+                      <strong>Workshopy</strong>
+                      <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                        <li>Je čas roztrhávat i čas sešívat (Klára Michlová)</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>11:30 – 13:00</td>
+                    <td>Závěrečná mše svatá - bazilika (o. arcibiskup Stanislav Přibyl)</td>
+                  </tr>
+                  <tr>
+                    <td>13:00 – 16:00</td>
+                    <td>Odjezd účastníků + úklid</td>
+                  </tr>
+                  <tr>
+                    <td>Celý den</td>
+                    <td>Tichá adorace - malá kaple na gymnáziu</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+        <Footer />
+      </section>
+    </div>
+    <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
+    <div class="bottom-bar"></div>
+
+    <script type="module" src="/script.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
