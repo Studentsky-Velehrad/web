@@ -162,6 +162,36 @@ import Footer from "../components/Footer.astro";
         margin-bottom: 1.2rem;
       }
 
+      .countdown {
+        font-family: "Helvetica Now Bold", Arial, sans-serif;
+        color: #e1543a;
+        font-size: 1.45rem;
+        font-weight: bold;
+        margin: 0 0 0.9rem;
+        line-height: 1.35;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+      }
+
+      .countdown-heading {
+        font-size: 0.55em;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .countdown-time {
+        font-size: 1.9em;
+        line-height: 1.1;
+        letter-spacing: 0.06em;
+      }
+
+      .countdown-labels {
+        font-size: 0.62em;
+        letter-spacing: 0.04em;
+      }
+
       .subtitle {
         font-family: "Helvetica Now Bold", Arial, sans-serif;
         color: #1a2764;
@@ -369,6 +399,20 @@ import Footer from "../components/Footer.astro";
           margin: 12px 0px 24px;
         }
 
+        .countdown {
+          font-size: 1.2rem;
+          margin: 8px 0 8px;
+          padding: 0 10px;
+        }
+
+        .countdown-labels {
+          font-size: 0.58em;
+        }
+
+        .countdown-heading {
+          font-size: 0.52em;
+        }
+
         .cover-text {
           margin-top: 0px;
         }
@@ -438,6 +482,11 @@ import Footer from "../components/Footer.astro";
       <div class="cover">
         <div class="cover-content">
           <div class="cover-text">
+            <div id="countdown" class="countdown" aria-live="polite">
+              <span class="countdown-heading">Do registrace zbývá</span>
+              <span class="countdown-time">--:--:--:--</span>
+              <span class="countdown-labels">dnů : hodin : minut : sekund</span>
+            </div>
             <h1>Studentský Velehrad 2026</h1>
             <p class="subtitle">
               Celostátní setkání věřících vysokoškoláků a mladých pracujících
@@ -610,6 +659,83 @@ import Footer from "../components/Footer.astro";
     <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
     <div class="bottom-bar"></div>
 
+    <script>
+      (function () {
+        const countdownElement = document.getElementById("countdown");
+        if (!(countdownElement instanceof HTMLElement)) return;
+        const countdownTarget = countdownElement;
+        const countdownHeading = countdownTarget.querySelector(".countdown-heading");
+        const countdownTime = countdownTarget.querySelector(".countdown-time");
+        const countdownLabels = countdownTarget.querySelector(".countdown-labels");
+
+        if (!(countdownHeading instanceof HTMLElement)) return;
+        if (!(countdownTime instanceof HTMLElement)) return;
+        if (!(countdownLabels instanceof HTMLElement)) return;
+        const countdownHeadingEl = countdownHeading;
+        const countdownTimeEl = countdownTime;
+        const countdownLabelsEl = countdownLabels;
+
+        // 31. 3. 2026 23:59:59 v UTC+1 = 31. 3. 2026 22:59:59 UTC
+        const targetDate = new Date(Date.UTC(2026, 2, 31, 22, 59, 59));
+
+        function getCzechPlural(value: number, one: string, few: string, many: string) {
+          if (value === 1) return one;
+          if (value >= 2 && value <= 4) return few;
+          return many;
+        }
+
+        function updateCountdown() {
+          const now = new Date();
+          const diff = targetDate.getTime() - now.getTime();
+
+          if (diff <= 0) {
+            countdownHeadingEl.textContent = "Registrace skončila";
+            countdownTimeEl.textContent = "00:00:00:00";
+            countdownLabelsEl.textContent = "";
+            return;
+          }
+
+          countdownHeadingEl.textContent = "Do registrace zbývá";
+
+          const totalSeconds = Math.floor(diff / 1000);
+          const days = Math.floor(totalSeconds / (24 * 60 * 60));
+          const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
+          const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+          const seconds = totalSeconds % 60;
+
+          const dnyText = getCzechPlural(days, "den", "dny", "dnů");
+          const hodinyText = getCzechPlural(
+            hours,
+            "hodina",
+            "hodiny",
+            "hodin"
+          );
+          const minutyText = getCzechPlural(
+            minutes,
+            "minuta",
+            "minuty",
+            "minut"
+          );
+          const sekundyText = getCzechPlural(
+            seconds,
+            "sekunda",
+            "sekundy",
+            "sekund"
+          );
+
+          const dd = String(days).padStart(2, "0");
+          const hh = String(hours).padStart(2, "0");
+          const mm = String(minutes).padStart(2, "0");
+          const ss = String(seconds).padStart(2, "0");
+
+          countdownTimeEl.textContent = `${dd}:${hh}:${mm}:${ss}`;
+          countdownLabelsEl.textContent = `${dnyText} : ${hodinyText} : ${minutyText} : ${sekundyText}`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      })();
+    </script>
     <script type="module" src="/script.js" defer></script>
   </body>
 </html>
