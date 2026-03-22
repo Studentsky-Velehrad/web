@@ -664,9 +664,11 @@ import Footer from "../components/Footer.astro";
         const countdownElement = document.getElementById("countdown");
         if (!(countdownElement instanceof HTMLElement)) return;
         const countdownTarget = countdownElement;
-        const countdownHeading = countdownTarget.querySelector(".countdown-heading");
+        const countdownHeading =
+          countdownTarget.querySelector(".countdown-heading");
         const countdownTime = countdownTarget.querySelector(".countdown-time");
-        const countdownLabels = countdownTarget.querySelector(".countdown-labels");
+        const countdownLabels =
+          countdownTarget.querySelector(".countdown-labels");
 
         if (!(countdownHeading instanceof HTMLElement)) return;
         if (!(countdownTime instanceof HTMLElement)) return;
@@ -678,7 +680,12 @@ import Footer from "../components/Footer.astro";
         // 31. 3. 2026 23:59:59 v UTC+1 = 31. 3. 2026 22:59:59 UTC
         const targetDate = new Date(Date.UTC(2026, 2, 31, 22, 59, 59));
 
-        function getCzechPlural(value: number, one: string, few: string, many: string) {
+        function getCzechPlural(
+          value: number,
+          one: string,
+          few: string,
+          many: string,
+        ) {
           if (value === 1) return one;
           if (value >= 2 && value <= 4) return few;
           return many;
@@ -695,7 +702,7 @@ import Footer from "../components/Footer.astro";
             return;
           }
 
-          countdownHeadingEl.textContent = "Do registrace zbývá";
+          countdownHeadingEl.textContent = "Do konce registrace zbývá";
 
           const totalSeconds = Math.floor(diff / 1000);
           const days = Math.floor(totalSeconds / (24 * 60 * 60));
@@ -704,23 +711,18 @@ import Footer from "../components/Footer.astro";
           const seconds = totalSeconds % 60;
 
           const dnyText = getCzechPlural(days, "den", "dny", "dnů");
-          const hodinyText = getCzechPlural(
-            hours,
-            "hodina",
-            "hodiny",
-            "hodin"
-          );
+          const hodinyText = getCzechPlural(hours, "hodina", "hodiny", "hodin");
           const minutyText = getCzechPlural(
             minutes,
             "minuta",
             "minuty",
-            "minut"
+            "minut",
           );
           const sekundyText = getCzechPlural(
             seconds,
             "sekunda",
             "sekundy",
-            "sekund"
+            "sekund",
           );
 
           const dd = String(days).padStart(2, "0");
