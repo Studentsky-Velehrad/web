@@ -119,4 +119,51 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+
+
+    const targetDate = new Date(2026, 3, 1, 1, 0, 0).getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            document.getElementById("countdown").innerHTML = "Registrace skončila";
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+        document.getElementById("days-label").textContent =
+            getCzechPlural(days, "den", "dny", "dní");
+
+        document.getElementById("hours-label").textContent =
+            getCzechPlural(hours, "hodina", "hodiny", "hodin");
+
+        document.getElementById("minutes-label").textContent =
+            getCzechPlural(minutes, "minuta", "minuty", "minut");
+
+        document.getElementById("seconds-label").textContent =
+            getCzechPlural(seconds, "sekunda", "sekundy", "sekund");
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function getCzechPlural(number, one, few, many) {
+        if (number === 1) return one;
+        if (number >= 2 && number <= 4) return few;
+        return many;
+    }
 });
+
+
