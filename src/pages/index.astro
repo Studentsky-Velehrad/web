@@ -163,27 +163,28 @@ import Footer from "../components/Footer.astro";
       }
 
       #countdown-wrapper {
-        font-family: "Helvetica Now Bold", Arial, sans-serif;
-        color: #e1543a;
-        padding: 0 0 15px;
+        font-family: "Helvetica Now", Arial, sans-serif;
+        background-color: #1a2764;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 5px;
         display: inline-flex;
         flex-direction: column;
         align-items: center;
       }
 
       .countdown-title {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-bottom: 8px;
-        font-weight: 500;
+
         text-transform: uppercase;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.08rem;
       }
 
       #countdown {
         display: flex;
         align-items: center;
         gap: 10px;
-        font-weight: bold;
       }
 
       #countdown div {
@@ -193,7 +194,7 @@ import Footer from "../components/Footer.astro";
       }
 
       .countdown-number {
-        font-size: 2.7rem;
+        font-size: 1.6rem;
         line-height: 1;
       }
 
@@ -202,7 +203,8 @@ import Footer from "../components/Footer.astro";
       }
 
       #countdown small {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08rem;
       }
 
       .subtitle {
@@ -414,7 +416,7 @@ import Footer from "../components/Footer.astro";
 
         #countdown-wrapper {
           margin: 8px 0px;
-          padding: 0;
+          padding: 10px;
         }
 
         .countdown-title {
@@ -423,7 +425,7 @@ import Footer from "../components/Footer.astro";
         }
 
         .countdown-number {
-          font-size: 2.3rem;
+          font-size: 1.5rem;
           line-height: 1;
         }
 
@@ -432,7 +434,7 @@ import Footer from "../components/Footer.astro";
         }
 
         #countdown small {
-          font-size: 0.8rem;
+          font-size: 0.6rem;
         }
 
         .cover-text {
@@ -488,6 +490,12 @@ import Footer from "../components/Footer.astro";
           min-width: auto;
           width: auto;
           padding: 26px 28px;
+        }
+      }
+
+      @media (max-width: 932px) {
+        #countdown-wrapper {
+          background-color: #2a3a7a;
         }
       }
     </style>
