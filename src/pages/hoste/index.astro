@@ -117,18 +117,6 @@ import Footer from "../../components/Footer.astro";
 				overflow: hidden;
 			}
 
-			.about::before {
-				content: "";
-				position: absolute;
-				inset: 40px -150px auto;
-				height: 340px;
-				background:
-					radial-gradient(circle at 20% 35%, rgba(238, 175, 19, 0.2), transparent 52%),
-					radial-gradient(circle at 78% 10%, rgba(26, 39, 100, 0.16), transparent 48%),
-					linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
-				pointer-events: none;
-			}
-
 			.about-flex {
 				display: flex;
 				justify-content: center;
@@ -166,11 +154,7 @@ import Footer from "../../components/Footer.astro";
 
 			.about p.intro {
 				font-size: 17px;
-				background: rgba(255, 255, 255, 0.82);
-				padding: 1.15rem 1.4rem;
-				border-left: 4px solid #eeaf13;
-				box-shadow: 0 10px 24px rgba(26, 39, 100, 0.08);
-				border-radius: 0 10px 10px 0;
+				padding: 0;
 			}
 
 			.signpost-grid {
@@ -240,7 +224,7 @@ import Footer from "../../components/Footer.astro";
 
 				.about p.intro {
 					font-size: 16px;
-					padding: 1rem;
+					padding: 0;
 				}
 			}
 		</style>
