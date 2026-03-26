@@ -4,23 +4,23 @@ import MobileMenu from "../../../components/MobileMenu.astro";
 import Footer from "../../../components/Footer.astro";
 
 const speakers = [
-  { name: "Alexandr Flek", file: "Alexandr Flek 1.webp" },
-  { name: "Daniel Tůma", file: "Daniel Tůma 1.webp" },
-  { name: "David Krajíček", file: "David Krajíček 1.webp" },
-  { name: "František Talíř", file: "František Talíř 1.webp" },
-  { name: "Jan Regner", file: "Jan Regner 1.webp" },
-  { name: "Jana Matoušková", file: "Jana Matoušková 1.webp" },
-  { name: "Jiří Krejčí", file: "Jiří Krejčí 1.webp" },
-  { name: "Josef Prokeš", file: "Josef Prokeš 1.webp" },
-  { name: "Kika Štamberová", file: "Kika Štamberová 1.webp" },
-  { name: "Marek Chvátal", file: "Marek Chvátal 1.webp" },
-  { name: "Marek Drábek", file: "Marek Drábek 1.webp" },
-  { name: "Markéta a Milan Jiroutovi", file: "Markéta a Milan Jiroutovi 1.webp" },
-  { name: "Pater Pepa", file: "Pater Pepa 1.webp" },
-  { name: "Petr Wiselka", file: "Petr Wiselka 1.webp" },
-  { name: "Simona Cupová", file: "Simona Cupova 1.webp" },
-  { name: "Tomáš Halik", file: "Tomáš Halík 1.webp" },
-  { name: "Václav Uher", file: "Václav Uher 1.webp" }
+  { name: "Alexandr Flek", file: "Alexandr Flek 1.webp", anchor: "flek" },
+  { name: "Daniel Tůma", file: "Daniel Tůma 1.webp", anchor: "tuma" },
+  { name: "David Krajíček", file: "David Krajíček 1.webp", anchor: "krajicek" },
+  { name: "František Talíř", file: "František Talíř 1.webp", anchor: "talir" },
+  { name: "Jan Regner", file: "Jan Regner 1.webp", anchor: "regner" },
+  { name: "Jana Matoušková", file: "Jana Matoušková 1.webp", anchor: "matouskova" },
+  { name: "Jiří Krejčí", file: "Jiří Krejčí 1.webp", anchor: "krejci" },
+  { name: "Josef Prokeš", file: "Josef Prokeš 1.webp", anchor: "prokes" },
+  { name: "Kika Štamberová", file: "Kika Štamberová 1.webp", anchor: "stamberova" },
+  { name: "Marek Chvátal", file: "Marek Chvátal 1.webp", anchor: "chvatal" },
+  { name: "Marek Drábek", file: "Marek Drábek 1.webp", anchor: "drabek" },
+  { name: "Markéta a Milan Jiroutovi", file: "Markéta a Milan Jiroutovi 1.webp", anchor: "jiroutovi" },
+  { name: "Pater Pepa", file: "Pater Pepa 1.webp", anchor: "pepa" },
+  { name: "Petr Wiselka", file: "Petr Wiselka 1.webp", anchor: "wiselka" },
+  { name: "Simona Cupová", file: "Simona Cupova 1.webp", anchor: "cupova" },
+  { name: "Tomáš Halik", file: "Tomáš Halík 1.webp", anchor: "halik" },
+  { name: "Václav Uher", file: "Václav Uher 1.webp", anchor: "uher" }
 ];
 ---
 
@@ -98,6 +98,16 @@ const speakers = [
         color: #1a2764;
       }
 
+      .speaker-card h3 a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .speaker-card h3 a:hover,
+      .speaker-card h3 a:focus-visible {
+        text-decoration: underline;
+      }
+
       .speaker-card p {
         margin: 0;
         color: #5b5f68;
@@ -146,13 +156,13 @@ const speakers = [
           <div class="speaker-grid">
             {
               speakers.map((speaker) => (
-                <article class="speaker-card">
+                <article class="speaker-card" id={speaker.anchor}>
                   <img
                     src={`/images/hoste/prednasky/${encodeURIComponent(speaker.file)}`}
                     alt={speaker.name}
                     loading="lazy"
                   />
-                  <h3>{speaker.name}</h3>
+                  <h3><a href={`#${speaker.anchor}`}>{speaker.name}</a></h3>
                   <p>Lorem ipsum dolor sit amet.</p>
                 </article>
               ))
