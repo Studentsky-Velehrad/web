@@ -101,12 +101,33 @@ const concerts = [
       }
 
       .concert-card .image-fallback {
-        display: grid;
-        place-items: center;
+        position: relative;
         background: #f3f4f7;
-        color: #5b5f68;
-        padding: 0 0.8rem;
-        line-height: 1.4;
+        overflow: hidden;
+      }
+
+      .concert-card .image-fallback::before {
+        content: "";
+        position: absolute;
+        top: 34px;
+        left: 50%;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: #b9bec8;
+        transform: translateX(-50%);
+      }
+
+      .concert-card .image-fallback::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 28px;
+        width: 92px;
+        height: 52px;
+        border-radius: 52px 52px 18px 18px;
+        background: #b9bec8;
+        transform: translateX(-50%);
       }
 
       .concert-card h3 {
@@ -156,10 +177,6 @@ const concerts = [
         <div class="about-flex">
           <div class="about-text">
             <h2>Koncerty</h2>
-            <p>
-              Naši hudební hosté přivezou varhanní hudbu, autorskou tvorbu i lidovou energii
-              cimbálu.
-            </p>
           </div>
         </div>
 
@@ -176,7 +193,7 @@ const concerts = [
                         loading="lazy"
                       />
                     ) : (
-                      <div class="image-fallback" aria-hidden="true">Foto bude doplněno</div>
+                      <div class="image-fallback" aria-hidden="true"></div>
                     )
                   }
                   <h3><a href={`#${concert.anchor}`}>{concert.name}</a></h3>
