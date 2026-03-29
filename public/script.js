@@ -5,41 +5,54 @@ document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.querySelector('#g-navigation nav ul');
     const body = document.body;
 
-    function toggleMenu() {
-        hamburger.classList.toggle("open");
-        mobileMenu.classList.toggle('open');
+
+    function openMenu() {
+        hamburger.classList.add("open");
+        mobileMenu.classList.add('open');
+        // Zabrání scrollování pozadí při otevřeném menu
+        body.style.overflow = 'hidden';
     }
 
-    hamburgerClose.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-    });
+    function closeMenu() {
+        hamburger.classList.remove("open");
+        mobileMenu.classList.remove('open');
+        body.style.overflow = '';
+    }
 
     hamburger.addEventListener('click', (e) => {
-        toggleMenu();
+        if (!mobileMenu.classList.contains('open')) {
+            openMenu();
+        }
         e.stopPropagation();
     });
 
+    hamburgerClose.addEventListener('click', (e) => {
+        closeMenu();
+        e.stopPropagation();
+    });
+
+    // Zabrání zavření při kliknutí uvnitř menu
     mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 
-    document.addEventListener('click', (e) => {
+    // Zavře menu při kliknutí mimo menu
+    document.addEventListener('click', () => {
         if (mobileMenu.classList.contains('open')) {
-            hamburger.classList.remove('open');
-            mobileMenu.classList.remove('open');
+            closeMenu();
         }
     });
 
+    // Zavře menu při scrollu
     window.addEventListener('scroll', () => {
         if (mobileMenu.classList.contains('open')) {
-            hamburger.classList.remove('open');
-            mobileMenu.classList.remove('open');
+            closeMenu();
         }
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
+            closeMenu();
         });
     });
 
