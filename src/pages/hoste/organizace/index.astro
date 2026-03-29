@@ -7,6 +7,7 @@ const organizations = [
   {
     name: "Díky, že můžem",
     file: "Díky, že můžem (Skrytá církev).webp",
+    imageClass: "image-contain",
     description:
       "Nevládní organizace složená z studentů a mladých lidí, kterým není lhostejný okolní svět. Chceme společnost spojovat, vzdělávat a podněcovat v ní chuť aktivně se na naší budoucnosti podílet. Postupně se z nás stala organizace, která nejen slaví svobodu v centru Prahy, ale stojí za spoustou celoročních projektů, které sahají do všech regionů v naší zemi. Na letošním Studentském Velehradě uvedeme audiodokumentární instalaci Skrytá církev.",
     url: "https://dikyzemuzem.cz//",
@@ -153,6 +154,12 @@ const organizations = [
         display: block;
       }
 
+      .organization-card img.image-contain {
+        object-fit: contain;
+        background: #fff;
+        padding: 12px;
+      }
+
       .organization-card .image-fallback {
         width: 170px;
         height: 170px;
@@ -261,6 +268,7 @@ const organizations = [
                       <img
                         src={`/images/hoste/organizace/${encodeURIComponent(org.file)}`}
                         alt={org.name}
+                        class={org.imageClass}
                         loading="lazy"
                       />
                     ) : (
