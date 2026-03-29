@@ -100,7 +100,7 @@ const speakers = [
     file: null,
     anchor: "krsnak",
     description:
-      "Vystudoval Filmová studia na FF UK. Umí číst, psát a vyprávět. Věnuje se intuitivní pedagogice, alternativnímu vzdělávání a šlechtění informací. Založil stránky digiděti.cz, kde se věnuje digitalizaci života s důrazem, na výchovu dětí běhajících internetovými zákoutími. V roce 2023 mu na stejné téma vyšla kniha Digiděti. Je autorem či spoluautorem několika dalších knih, nejnovější je Něha (2026). Šel pěšky a bez telefonu z Prahy do Beskyd."
+      "Vystudoval Filmová studia na FF UK. Umí číst, psát a vyprávět. Věnuje se intuitivní pedagogice, alternativnímu vzdělávání a šlechtění informací. Založil stránky <a href=\"https://digiděti.cz\" target=\"_blank\" rel=\"noopener noreferrer\">digiděti.cz</a>, kde se věnuje digitalizaci života s důrazem, na výchovu dětí běhajících internetovými zákoutími. V roce 2023 mu na stejné téma vyšla kniha Digiděti. Je autorem či spoluautorem několika dalších knih, nejnovější je Něha (2026). Šel pěšky a bez telefonu z Prahy do Beskyd."
   },
   {
     name: "Josef Prokeš",
@@ -280,6 +280,17 @@ const speakers = [
         line-height: 1.6;
       }
 
+      .speaker-card p a {
+        color: #1a5490;
+        text-decoration: none;
+        border-bottom: 1px solid #1a5490;
+      }
+
+      .speaker-card p a:hover,
+      .speaker-card p a:focus-visible {
+        text-decoration: underline;
+      }
+
       @media (max-width: 980px) {
         .about-flex {
           flex-direction: column;
@@ -325,7 +336,7 @@ const speakers = [
                     )
                   }
                   <h3><a href={`#${speaker.anchor}`}>{speaker.name}</a></h3>
-                  <p>{speaker.description}</p>
+                  <p set:html={speaker.description}></p>
                 </article>
               ))
             }
