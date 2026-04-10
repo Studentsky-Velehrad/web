@@ -142,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const diff = targetDate - now;
 
         if (diff <= 0) {
-            document.getElementById("countdown").innerHTML = "Registrace skončila";
             return;
         }
 
