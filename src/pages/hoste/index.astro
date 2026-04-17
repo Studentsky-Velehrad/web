@@ -47,7 +47,10 @@ import Footer from "../../components/Footer.astro";
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://studentskyvelehrad.cz/hoste" />
+		<meta
+			property="twitter:url"
+			content="https://studentskyvelehrad.cz/hoste"
+		/>
 		<meta property="twitter:title" content="Hosté" />
 		<meta
 			property="twitter:description"
@@ -180,7 +183,10 @@ import Footer from "../../components/Footer.astro";
 				text-transform: uppercase;
 				letter-spacing: 1.2px;
 				padding: 1rem 1.1rem;
-				transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+				transition:
+					transform 0.25s ease,
+					box-shadow 0.25s ease,
+					border-color 0.25s ease;
 				box-shadow: 0 10px 20px rgba(15, 27, 72, 0.08);
 				font-size: 15px;
 			}
@@ -244,10 +250,12 @@ import Footer from "../../components/Footer.astro";
 					<div class="about-text">
 						<h2 class="spacing">Hosté</h2>
 						<p class="intro">
-							V letošním roce přijali naše laskavé pozvání hosté z celé republiky, známí i neznámí. 
-							Obohatí nás zástupci akademické obce i odborníci z praxe. 
-							Někteří s námi budou sdílet své pracovní zkušenosti, jiní své osobní příběhy. 
-							Všichni se rozhodli věnovat nám svůj čas, za což jim patří srdečný dík.
+							V letošním roce přijali naše laskavé pozvání hosté z
+							celé republiky, známí i neznámí. Obohatí nás
+							zástupci akademické obce i odborníci z praxe.
+							Někteří s námi budou sdílet své pracovní zkušenosti,
+							jiní své osobní příběhy. Všichni se rozhodli věnovat
+							nám svůj čas, za což jim patří srdečný dík.
 						</p>
 					</div>
 				</div>
@@ -256,19 +264,27 @@ import Footer from "../../components/Footer.astro";
 					<div class="signpost-grid">
 						<a class="signpost-link" href="/hoste/prednasky">
 							<span class="signpost-title">Přednášející</span>
-							<span class="signpost-arrow" aria-hidden="true">&#8250;</span>
+							<span class="signpost-arrow" aria-hidden="true"
+								>&#8250;</span
+							>
 						</a>
 						<a class="signpost-link" href="/hoste/organizace">
 							<span class="signpost-title">Organizace</span>
-							<span class="signpost-arrow" aria-hidden="true">&#8250;</span>
+							<span class="signpost-arrow" aria-hidden="true"
+								>&#8250;</span
+							>
 						</a>
 						<a class="signpost-link" href="/hoste/liturgie">
 							<span class="signpost-title">Liturgie</span>
-							<span class="signpost-arrow" aria-hidden="true">&#8250;</span>
+							<span class="signpost-arrow" aria-hidden="true"
+								>&#8250;</span
+							>
 						</a>
 						<a class="signpost-link" href="/hoste/koncerty">
 							<span class="signpost-title">Koncerty</span>
-							<span class="signpost-arrow" aria-hidden="true">&#8250;</span>
+							<span class="signpost-arrow" aria-hidden="true"
+								>&#8250;</span
+							>
 						</a>
 					</div>
 				</div>
@@ -276,6 +292,8 @@ import Footer from "../../components/Footer.astro";
 				<Footer />
 			</section>
 		</div>
-	<script type="module" src="/script_v3.js" defer></script>
+		<button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
+		<div class="bottom-bar"></div>
+		<script type="module" src="/script_v3.js" defer></script>
 	</body>
 </html>
