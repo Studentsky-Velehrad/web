@@ -185,10 +185,15 @@ import Footer from "../../components/Footer.astro";
 
       .tile img {
         width: 275px;
+        height: 275px;
         display: block;
         margin: 0 auto;
         border-radius: 50%;
         object-fit: cover;
+      }
+
+      .tile--martin img {
+        object-position: center 18%;
       }
 
       .tile--avatar img {
@@ -439,7 +444,11 @@ import Footer from "../../components/Footer.astro";
             </div>
 
             <div class="tile">
-              <img src="/images/tym/martin_b.webp" alt="Martin" />
+              <img
+                src="/images/tym/martin_b.webp"
+                alt="Martin"
+                class="tile--martin"
+              />
               <h2>Martin Bičiště</h2>
               <p>Moderátoři</p>
             </div>
