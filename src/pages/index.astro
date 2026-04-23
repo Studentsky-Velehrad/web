@@ -113,11 +113,11 @@ import Footer from "../components/Footer.astro";
     <link rel="preload" as="image" href="/images/arrow-up-circle.svg" />
     <link rel="preload" as="image" href="/images/logo_b_transparent.webp" />
     <link rel="preload" as="image" href="/images/dlazdice/prednasky.webp" />
-    <link rel="preload" as="image" href="/images/dlazdice/workshopy.webp" />
     <link rel="preload" as="image" href="/images/dlazdice/liturgie.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/seminare.webp" />
     <link rel="preload" as="image" href="/images/dlazdice/skupinky.webp" />
+    <link rel="preload" as="image" href="/images/dlazdice/workshopy.webp" />
     <link rel="preload" as="image" href="/images/dlazdice/zabava.webp" />
-    <link rel="preload" as="image" href="/images/dlazdice/koncerty.webp" />
     <link rel="stylesheet" href="styles_v1.css" />
 
     <style>
@@ -151,7 +151,7 @@ import Footer from "../components/Footer.astro";
         align-items: center;
         flex: 1;
         padding: 0 1rem;
-        margin-top: 55px;
+        margin-top: 20px;
       }
 
       .cover-text h1 {
@@ -160,6 +160,49 @@ import Footer from "../components/Footer.astro";
         font-size: 7rem;
         color: #1a2764;
         margin-bottom: 1.2rem;
+      }
+
+      #countdown-wrapper {
+        font-family: "Helvetica Now Bold", Arial, sans-serif;
+        color: #e1543a;
+        padding: 0 0 15px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .countdown-title {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      #countdown {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-weight: bold;
+      }
+
+      #countdown div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .countdown-number {
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .countdown-colon {
+        font-size: 1.5rem;
+      }
+
+      #countdown small {
+        font-size: 0.8rem;
       }
 
       .subtitle {
@@ -193,7 +236,7 @@ import Footer from "../components/Footer.astro";
 
       .uvod-button {
         font-family: Arial, sans-serif;
-        background-color: #e1543a;
+        background-color: rgba(225, 84, 58, 0.95);
         color: #fff;
         width: 15.5rem;
         height: 58px;
@@ -445,7 +488,6 @@ import Footer from "../components/Footer.astro";
             <p class="date">30. dubna – 3. května 2026</p>
           </div>
           <div class="button-wrapper">
-            <a href="/registrace" class="uvod-button">Zaregistruj se</a>
             <a href="/chci-prispet" class="uvod-button prispet">Chci přispět</a>
           </div>
         </div>
@@ -504,18 +546,8 @@ import Footer from "../components/Footer.astro";
               <img src="images/dlazdice/prednasky.webp" alt="Přednášky" />
               <div class="overlay">
                 <p>
-                  Inspirativní osobnosti z církevního i veřejného života, které
-                  se nebojí otevírat aktuální témata.
-                </p>
-              </div>
-            </div>
-
-            <div class="tile">
-              <img src="images/dlazdice/workshopy.webp" alt="Workshopy" />
-              <div class="overlay">
-                <p>
-                  Kurzy a dílny zaměřené na kreativitu, seberozvoj a praktické
-                  dovednosti.
+                  Přednášky povedou inspirativní osobnosti, které jsou
+                  připraveny odpovědět na vaše dotazy.
                 </p>
               </div>
             </div>
@@ -524,8 +556,18 @@ import Footer from "../components/Footer.astro";
               <img src="images/dlazdice/liturgie.webp" alt="Duchovní program" />
               <div class="overlay">
                 <p>
-                  Každodenní mše svaté, chvály, adorace, svátost smíření
-                  a prostor pro ztišení.
+                  Mše svatá, chvály, adorace, duchovní rozhovor, svátost smíření
+                  a mnoho dalších možností jak můžete vstoupit do modlitby.
+                </p>
+              </div>
+            </div>
+
+            <div class="tile">
+              <img src="images/dlazdice/seminare.webp" alt="Semináře" />
+              <div class="overlay">
+                <p>
+                  Diskuse bez posluchačů, kde můžete položit své dotazy a
+                  přispět k jejich zodpovězení.
                 </p>
               </div>
             </div>
@@ -537,8 +579,18 @@ import Footer from "../components/Footer.astro";
               />
               <div class="overlay">
                 <p>
-                  Debaty v malých skupinách o víře, vztazích a každodenním
-                  životě.
+                  Debata o víře, vztazích a každodenním životě se vám nabízí
+                  jako možnost prožít čas intenzivněji.
+                </p>
+              </div>
+            </div>
+
+            <div class="tile">
+              <img src="images/dlazdice/workshopy.webp" alt="Workshopy" />
+              <div class="overlay">
+                <p>
+                  Kurzy zaměřené na seberozvoj, kreativitu a praktické
+                  dovednosti probudí vaše smysly.
                 </p>
               </div>
             </div>
@@ -550,18 +602,8 @@ import Footer from "../components/Footer.astro";
               />
               <div class="overlay">
                 <p>
-                  Koncerty, výlety, sportovní aktivity a další program
-                  pro odpočinek i společné zážitky.
-                </p>
-              </div>
-            </div>
-
-            <div class="tile">
-              <img src="images/dlazdice/koncerty.webp" alt="Společenství" />
-              <div class="overlay">
-                <p>
-                  Prostředí plné mladých lidí, sdílených hodnot a nových
-                  přátelství.
+                  Koncerty, výlety, sportovní aktivity a další program, ze
+                  kterého načerpáte odpočinek i společné zážitky.
                 </p>
               </div>
             </div>
@@ -609,7 +651,6 @@ import Footer from "../components/Footer.astro";
     </div>
     <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
     <div class="bottom-bar"></div>
-
-    <script type="module" src="/script.js" defer></script>
+    <script type="module" src="/script_v3.js" defer></script>
   </body>
 </html>

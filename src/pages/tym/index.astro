@@ -185,10 +185,15 @@ import Footer from "../../components/Footer.astro";
 
       .tile img {
         width: 275px;
+        height: 275px;
         display: block;
         margin: 0 auto;
         border-radius: 50%;
         object-fit: cover;
+      }
+
+      .tile--martin img {
+        object-position: center 18%;
       }
 
       .tile--avatar img {
@@ -292,14 +297,14 @@ import Footer from "../../components/Footer.astro";
               <img src="/images/tym/domca.webp" alt="Domča" />
               <h2>Dominika Demlová</h2>
               <p>Vedoucí SV</p>
-              <a href="mailto:vedouci.sv@vkhcr.org">vedouci.sv@vkhcr.org</a>
+              <a href="mailto:studentskyvelehrad@vkhcr.org">studentskyvelehrad@vkhcr.org</a>
             </div>
 
             <div class="tile">
               <img src="/images/tym/pitr.webp" alt="Pítr" />
               <h2>Petr Kučera</h2>
               <p>Vedoucí SV</p>
-              <a href="mailto:vedouci.sv@vkhcr.org">vedouci.sv@vkhcr.org</a>
+              <a href="mailto:studentskyvelehrad@vkhcr.org">studentskyvelehrad@vkhcr.org</a>
             </div>
 
             <div class="tile">
@@ -418,18 +423,34 @@ import Footer from "../../components/Footer.astro";
               <a href="mailto:propagace.sv@vkhcr.org">propagace.sv@vkhcr.org</a>
             </div>
 
-            <div class="tile tile--avatar">
-              <img src="/images/tym/avatar.webp" alt="Avatar" />
+            <div class="tile">
+              <img src="/images/tym/terezka_g.webp" alt="Terezka" />
               <h2>Terezie Gilligová</h2>
               <p>Propagace</p>
               <a href="mailto:propagace.sv@vkhcr.org">propagace.sv@vkhcr.org</a>
             </div>
 
-            <div class="tile tile--avatar">
-              <img src="/images/tym/avatar.webp" alt="Avatar" />
+            <div class="tile">
+              <img src="/images/tym/anicka_pra.webp" alt="Anička" />
               <h2>Anna Pražáková</h2>
               <p>Propagace</p>
               <a href="mailto:propagace.sv@vkhcr.org">propagace.sv@vkhcr.org</a>
+            </div>
+
+            <div class="tile">
+              <img src="/images/tym/anicka_mari.webp" alt="Anička" />
+              <h2>Anna Marie Maříková</h2>
+              <p>Moderátoři</p>
+            </div>
+
+            <div class="tile">
+              <img
+                src="/images/tym/martin_b.webp"
+                alt="Martin"
+                class="tile--martin"
+              />
+              <h2>Martin Bičiště</h2>
+              <p>Moderátoři</p>
             </div>
           </div>
         </div>
@@ -440,6 +461,6 @@ import Footer from "../../components/Footer.astro";
     <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
     <div class="bottom-bar"></div>
 
-    <script type="module" src="/script.js" defer></script>
+    <script type="module" src="/script_v3.js" defer></script>
   </body>
 </html>

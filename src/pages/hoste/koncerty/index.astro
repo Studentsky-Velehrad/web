@@ -1,0 +1,218 @@
+---
+import Navigation from "../../../components/Navigation.astro";
+import MobileMenu from "../../../components/MobileMenu.astro";
+import Footer from "../../../components/Footer.astro";
+
+const concerts = [
+  {
+    name: "Petr Kolář",
+    file: "Petr Kolář 1.webp",
+    anchor: "kolar",
+    description:
+      "Od roku 2000 je pedagogem hry na varhany a improvizace na Konzervatoři a JAMU v Brně. Pravidelně spolupracuje s Filharmonií Brno, různými komorními ansámbly a sbory. Sólově vystupuje doma i v zahraničí. Po celou svoji hudební kariéru se věnuje práci s pěveckými sbory. V období 1995–2002 byl angažován v Národním divadle v Brně, kde na pozici sbormistra Zpěvohry, nastudoval více jak 20 operet a muzikálů.  V roce 2001 se stal sbormistrem Brněnského filharmonického sboru Beseda brněnská a dirigentem Orchestru katedrály sv. Petra a Pavla. V roce 2014 zakládá Brněnský katedrální sbor MAGNIFICAT. Během návštěvy papeže Benedikta XVI. v Brně v roce 2009, dirigoval hudbu při slavnostní papežské bohoslužbě na místním letišti. Za své působení v oblasti duchovní hudby obdržel v roce 2013 Medaili sv. Petra a Pavla, v roce 2019 obdržel cenu Johann-Wenzel-Stamitz Pries, uměleckého sdružení Esslingen. Varhanní koncert proběhne v sobotu ve 21:00 v bazilice Nanebevzetí Panny Marie a svatého Cyrila a Metoděje.",
+  },
+  {
+    name: "Pavel Čadek a Úcellová skupina",
+    file: "Čadek a Účelová skupina 1.webp",
+    anchor: "cadek",
+    description:
+      "Pavel Čadek je mladý český písničkář doprovázející se na violoncello – je tak jediný svého druhu. Má za sebou 4 vydaná alba, desítky videoklipů a společné písně například s Xindlem X, Pokáčem, Michalem Horákem, Tali nebo Terezií Kovalovou. Jeho třetí album Stepní vlk získalo nejužší nominaci na cenu Anděl v kategorii Folk. Do nejširšího povědomí se dostaly písně Nestíhám, Utekla mi s ajťákem nebo například Prsa (duet s Michalem Horákem od Pana Fenka). Ač se jedná bez výjimky o humorné písně, velkou část publika si Pavel Čadek získává svou vážnější či lyrickou tvorbou, kterou při vystoupeních vkusně střídá s humorem. Úcellovou skupinu tvoří Pavlovi spoluhráči – akordeonista Ondřej Zámečník a bubeník Adam Sikora. Název Úcellová vychází z faktu, že hrají u cella. Koncert Úcellové skupiny proběhne v sobotu ve 21:00 v Turistickém centru.",
+  },
+  {
+    name: "Cimbálová muzika Džbánek",
+    file: "Dzbanek.webp",
+    anchor: "dzbanek",
+    description:
+      "Cimbálová muzika Džbánek je skupina, s kterými si užijete večer plný veselí a zábavy. Muzika jako taková existuje již přes 10 let, ale postupem času se formovala, až do nynější podoby, nebo alespoň její části. Naše vystoupení a různé hraní jsou nejen hudební událostí, ale také příležitostí k setkání lidí ze všech koutů České republiky, jelikož hrajeme jak v Brně, tak i v jiných městech ČR. Ve spolupráci s folklorním souborem jsme se nejednou dostali na Slovensko, ale zavítali jsme i do Polska a naší zatím největší výhrou je malé tour po Itálii, a to v Boloni, Miláně, Janově apod. Můžete nás potkávat na různých vystoupeních, svatbách, oslavách či akcích jako je tato. Cimbálová muzika Džbánek je živým důkazem toho, že hudba má sílu spojovat a inspirovat. Muzika Džbánek nám zahraje k tanci během čtvrtečního a sobotního večera v Turistickém centru.",
+  },
+];
+---
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koncerty</title>
+    <meta name="description" content="Koncerty Studentského Velehradu 2026" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link rel="stylesheet" href="/styles_v1.css" />
+
+    <style>
+      .about {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        padding-top: 70px;
+      }
+
+      .about-flex {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 1200px;
+        margin: 2rem auto;
+        gap: 20px;
+        padding: 0 15px;
+      }
+
+      .about-text {
+        width: 100%;
+        color: #424753;
+      }
+
+      .about h2 {
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+        font-size: 18px;
+        letter-spacing: 1.4px;
+      }
+
+      .about p {
+        margin: 0 auto 1.5rem auto;
+        line-height: 2;
+        max-width: 950px;
+        text-align: center;
+      }
+
+      .concert-grid {
+        width: 100%;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+      }
+
+      .concert-card {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .concert-card img,
+      .concert-card .image-fallback {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+
+      .concert-card .image-fallback {
+        position: relative;
+        background: #f3f4f7;
+        overflow: hidden;
+      }
+
+      .concert-card .image-fallback::before {
+        content: "";
+        position: absolute;
+        top: 34px;
+        left: 50%;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: #b9bec8;
+        transform: translateX(-50%);
+      }
+
+      .concert-card .image-fallback::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 28px;
+        width: 92px;
+        height: 52px;
+        border-radius: 52px 52px 18px 18px;
+        background: #b9bec8;
+        transform: translateX(-50%);
+      }
+
+      .concert-card h3 {
+        margin: 0.9rem 0 0.4rem;
+        font-size: 16px;
+        color: #1a2764;
+        text-align: center;
+      }
+
+      .concert-card h3 a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .concert-card h3 a:hover,
+      .concert-card h3 a:focus-visible {
+        text-decoration: underline;
+      }
+
+      .concert-card p {
+        margin: 0 auto;
+        color: #5b5f68;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 950px;
+      }
+
+      @media (max-width: 980px) {
+        .about-flex {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .concert-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <Navigation />
+    <MobileMenu />
+
+    <div class="content">
+      <div class="nav-bar"></div>
+      <div class="cover-bar"></div>
+
+      <section class="about">
+        <div class="about-flex">
+          <div class="about-text">
+            <h2>Koncerty</h2>
+          </div>
+        </div>
+
+        <div class="about-flex">
+          <div class="concert-grid">
+            {
+              concerts.map((concert) => (
+                <article class="concert-card" id={concert.anchor}>
+                  {concert.file ? (
+                    <img
+                      src={`/images/hoste/koncerty/${encodeURIComponent(concert.file)}`}
+                      alt={concert.name}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="image-fallback" aria-hidden="true" />
+                  )}
+                  <h3>
+                    <a href={`#${concert.anchor}`}>{concert.name}</a>
+                  </h3>
+                  <p>{concert.description}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+
+        <Footer />
+      </section>
+    </div>
+    <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
+    <div class="bottom-bar"></div>
+    <script type="module" src="/script_v3.js" defer></script>
+  </body>
+</html>
