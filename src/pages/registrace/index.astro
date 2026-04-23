@@ -2,7 +2,7 @@
 import Navigation from "../../components/Navigation.astro";
 import MobileMenu from "../../components/MobileMenu.astro";
 import Footer from "../../components/Footer.astro";
-import pdf from "../../../public/documents/Podminky_registrace_SV26_v20260311.pdf";
+import pdf from "../../../public/documents/Podminky_registrace_SV26_v20260331.pdf";
 ---
 
 <!doctype html>
@@ -171,6 +171,11 @@ import pdf from "../../../public/documents/Podminky_registrace_SV26_v20260311.pd
         margin-bottom: 20px;
       }
 
+      .note {
+        font-weight: normal;
+        font-size: 0.95em;
+      }
+
       .about-logo {
         display: block;
         margin: 0 auto 1.5rem auto;
@@ -266,9 +271,8 @@ import pdf from "../../../public/documents/Podminky_registrace_SV26_v20260311.pd
               a způsobu ubytování.
             </p>
             <ul class="price">
-              <li>Plná (čtvrtek - neděle): 2470 Kč</li>
-              <li>Víkendová (pátek - neděle): 2180 Kč</li>
               <li>Jednodenní (bez ubytování a stravování): 490 Kč</li>
+              <span class="note">(na místě)</span>
             </ul>
           </div>
         </div>
@@ -289,16 +293,6 @@ import pdf from "../../../public/documents/Podminky_registrace_SV26_v20260311.pd
             </p>
           </div>
         </div>
-
-        <div class="button-center">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd62ewZGBHMOiLG_T_zFeFN2-SfuhkuZ2nNMshAG4Oh_rEVRA/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="register-button">Zaregistruj se</a
-          >
-        </div>
-
         <div class="about-flex"></div>
 
         <Footer />
@@ -307,6 +301,6 @@ import pdf from "../../../public/documents/Podminky_registrace_SV26_v20260311.pd
     <button id="scrollTopBtn" aria-label="Zpět nahoru"></button>
     <div class="bottom-bar"></div>
 
-    <script type="module" src="/script.js" defer></script>
+    <script type="module" src="/script_v3.js" defer></script>
   </body>
 </html>
