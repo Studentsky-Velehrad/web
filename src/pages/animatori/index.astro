@@ -201,6 +201,58 @@ import Footer from "../../components/Footer.astro";
           width: 100%;
         }
       }
+
+      .groups {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      .group-block {
+        margin-bottom: 2rem;
+        padding: 1.2rem 1.4rem;
+        border-radius: 12px;
+        background: #f7f8fa;
+        transition: 0.2s ease;
+      }
+
+      .group-block:hover {
+        background: #eef1f5;
+      }
+
+      .group-block h3 {
+        margin: 0 0 0.4rem 0;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      .group-desc {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 0.8rem;
+      }
+
+      .group-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+      }
+
+      .group-list a {
+        text-decoration: none;
+        color: #2a2f3a;
+        padding-left: 10px;
+        position: relative;
+      }
+
+      .group-list a:hover {
+        text-decoration: underline;
+      }
+
+      .group-block.mokra {
+        margin-bottom: 6rem;
+      }
     </style>
   </head>
 
@@ -212,6 +264,53 @@ import Footer from "../../components/Footer.astro";
       <div class="nav-bar"></div>
       <div class="cover-bar"></div>
       <section class="about">
+        <div class="about-flex">
+          <div class="about-text">
+            <div class="about-text groups">
+              <h2 class="spacing">Místa diskuzních skupinek</h2>
+
+              <div class="group-block">
+                <h3>Suchá varianta</h3>
+                <p class="group-desc">Hezké počasí</p>
+                <a
+                  href="https://mapy.com/s/hozuvacuha"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Zobrazit mapu
+                </a>
+              </div>
+
+              <div class="group-block mokra">
+                <h3>Mokrá varianta</h3>
+                <p class="group-desc">Déšť / zima</p>
+
+                <div class="group-list">
+                  <a href="/Gymnazium1.pdf" target="_blank">
+                    Skupinky 1–6 (Gymnázium – přízemí)
+                  </a>
+
+                  <a href="/Gymnazium2.pdf" target="_blank">
+                    Skupinky 7–16 (Gymnázium – 1. patro)
+                  </a>
+
+                  <a href="/ZS1.pdf" target="_blank">
+                    Skupinky 17–21 (ZŠ – přízemí)
+                  </a>
+
+                  <a href="/ZS2.pdf" target="_blank">
+                    Skupinka 22 (ZŠ – 2. NP)
+                  </a>
+
+                  <a href="/ZS3.pdf" target="_blank">
+                    Skupinky 23–24 (ZŠ – 3. NP)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="about-flex">
           <div class="about-text">
             <h2 class="spacing">Animátoři</h2>
