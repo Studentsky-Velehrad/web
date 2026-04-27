@@ -118,6 +118,7 @@ import Footer from "../components/Footer.astro";
     <link rel="preload" as="image" href="/images/dlazdice/skupinky.webp" />
     <link rel="preload" as="image" href="/images/dlazdice/workshopy.webp" />
     <link rel="preload" as="image" href="/images/dlazdice/zabava.webp" />
+    <link rel="preload" as="image" href="/images/sponsors/azub-2025-2.webp" />
     <link rel="stylesheet" href="styles_v1.css" />
 
     <style>
@@ -380,6 +381,45 @@ import Footer from "../components/Footer.astro";
         transform: scale(1.1);
       }
 
+      .sponsors-section {
+        background-color: #f5f7fa;
+        padding: 3rem 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .sponsors-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .sponsors-section h2 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+        font-size: 18px;
+        color: #424753;
+      }
+
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .sponsors-grid img {
+        max-width: 240px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .sponsors-grid img:hover {
+        transform: scale(1.05);
+      }
+
       /* Mobile / tablet 640px a méně */
       @media (max-width: 640px) {
         .grid {
@@ -393,6 +433,23 @@ import Footer from "../components/Footer.astro";
         .about-flex {
           flex-direction: column;
           gap: 1rem;
+        }
+
+        .sponsors-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+
+        .sponsors-grid img {
+          max-width: 180px;
+        }
+
+        .sponsors-section {
+          padding: 2rem 1rem;
+        }
+
+        .sponsors-section h2 {
+          margin-bottom: 1.5rem;
         }
       }
 
@@ -647,6 +704,25 @@ import Footer from "../components/Footer.astro";
               ><img src="images/SV26_YT.svg" alt="YouTube" /></a
             >
           </p>
+        </div>
+
+        <div class="sponsors-section">
+          <div class="sponsors-container">
+            <h2>Podpořili nás</h2>
+            <div class="sponsors-grid">
+              <img src="images/sponsors/renovabis-logo-vector.webp" alt="Renovabis" />
+              <img src="images/sponsors/sv24_logo_3.webp" alt="ČBK" />
+              <img src="images/sponsors/sv24_logo_1.webp" alt="Credo" />
+              <img src="images/sponsors/sv24_logo_4.webp" alt="Siko" />
+              <img src="images/sponsors/sv24_logo_6.webp" alt="Navláčil" />
+              <img src="images/sponsors/azub-2025-2.webp" alt="Azub" />
+              <img src="images/sponsors/beas-logo-pekarny.webp" alt="Beas pekárna" />
+              <img src="images/sponsors/kafenaruby_logo.webp" alt="Kavárna Ruby" />
+              <img src="images/sponsors/logo-klub-color.webp" alt="Salesiani" />
+              <img src="images/sponsors/sv24_logo_8.webp" alt="Obec Velehrad" />
+              <img src="images/sponsors/sv24_logo_7.webp" alt="Akademická farnost Praha" />
+            </div>
+          </div>
         </div>
 
         <Footer />
