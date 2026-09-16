@@ -226,6 +226,38 @@ import Footer from "../components/Footer.astro";
         margin-bottom: 2rem;
       }
 
+      /* Decentní značka po skončení akce */
+      .event-closed {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.35rem;
+        max-width: 30rem;
+        margin: 0 auto 1.5rem;
+        padding: 0.9rem 1.6rem;
+        border: 1px solid rgba(26, 39, 100, 0.3);
+        border-radius: 18px;
+        background: transparent;
+        color: #1a2764;
+        text-align: center;
+      }
+
+      .event-closed .event-closed-label {
+        font-family: "Helvetica Now Bold", Arial, sans-serif;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #e1543a;
+        margin: 0;
+      }
+
+      .event-closed p:not(.event-closed-label) {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+
       .button-wrapper {
         display: flex;
         flex-direction: column;
@@ -543,6 +575,13 @@ import Footer from "../components/Footer.astro";
               Celostátní setkání věřících vysokoškoláků a mladých pracujících
             </p>
             <p class="date">30. dubna – 3. května 2026</p>
+            <div class="event-closed">
+              <p class="event-closed-label">Akce skončila</p>
+              <p>
+                Děkujeme za vaši podporu a účast. Budeme se těšit na další
+                ročník!
+              </p>
+            </div>
           </div>
           <div class="button-wrapper">
             <a href="https://app.studentskyvelehrad.cz/" class="uvod-button app">Aplikace</a>
